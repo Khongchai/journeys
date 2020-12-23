@@ -1,0 +1,16 @@
+svg > path
+{
+    fill: #FFD23F !important;
+}
+.logo-line
+{
+    stroke: #FFD23F !important;
+    fill: #FFD23F !important;
+}
+
+
+
+svg > rect
+{
+    fill: #FFD23F !important;
+}
