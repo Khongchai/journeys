@@ -1,6 +1,7 @@
 import React from "react";
 import {MainWindowWrapper} from "../elements";
 
+
 export const MainWindow = () => 
 {
    return (

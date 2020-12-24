@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import {Link} from "gatsby";
+import React from "react";
 
 export const NavbarWrapper = styled.div`
     //Width matches window's margin.
@@ -71,7 +73,7 @@ export const NavItem = styled.li`
     min-width: 0;
 `;
 
-export const NavLink = styled.a`
+export const NavLink = styled(props => <Link{...props}/>)`
     text-decoration: none;
     display: flex;
     align-items: center;

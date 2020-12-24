@@ -16,6 +16,7 @@ export default
     breakpoints: 
     {
         mobileAndTablet: "only screen and (max-width: 600px)",
+        largeDevices: "only screen and (min-width: 600px)",
     },
     spacings:
     {
