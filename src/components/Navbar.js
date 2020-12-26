@@ -11,8 +11,14 @@ import handleHomeButtonDrag, {checkIfOffScreen} from "../utils/handleHomeButtonD
 
 
 
-export const Navbar = ({topic1, topic2, topic3, topic4, topic5, bottomTopic}) =>
+export const Navbar = () =>
 {
+    const projectName = "Journeys";
+    const bioText = "Biography";
+    const aboutText = "About";
+    const analysisText = "Analysis";
+    const creditText = "Credit";
+    const researchText = "Research";
     useEffect(() => 
     {
         handleHomeButtonDrag();
@@ -31,53 +37,53 @@ export const Navbar = ({topic1, topic2, topic3, topic4, topic5, bottomTopic}) =>
                     <NavItem className="nav-item">
                         <NavLink to="/">
                             <LinkText className="link-text" >
-                                Journeys
+                                {projectName}
                             </LinkText>
                             <Logo/>
                         </NavLink>
                     </NavItem>
 
                     <NavItem className="nav-item">
-                        <NavLink href="#">
-                            <AboutIcon/>
-                            <LinkText className="link-text">
-                                {topic2}
-                            </LinkText>
-                        </NavLink>
-                    </NavItem>
-
-                    <NavItem className="nav-item">
-                        <NavLink href="#">
+                        <NavLink to="/biography">
                             <BiographyIcon/>
                             <LinkText className="link-text">
-                                {topic3}
+                                {bioText}
                             </LinkText>
                         </NavLink>
                     </NavItem>
 
                     <NavItem className="nav-item">
-                        <NavLink href="#">
+                        <NavLink to="/about">
+                            <AboutIcon/>
+                            <LinkText className="link-text">
+                                {aboutText}
+                            </LinkText>
+                        </NavLink>
+                    </NavItem>
+
+                    <NavItem className="nav-item">
+                        <NavLink to="analysis">
                             <AnalysisIcon/>
                             <LinkText className="link-text">
-                                {topic4}                            
+                                {analysisText}                            
                             </LinkText>
                         </NavLink>
                     </NavItem>
 
                     <NavItem className="nav-item">
-                        <NavLink href="#">
+                        <NavLink to="credit">
                             <CreditIcon/>
                             <LinkText className="link-text">
-                                {topic5}
+                                {creditText}
                             </LinkText>
                         </NavLink>
                     </NavItem>
                         
                     <NavItem className="nav-item">
-                        <NavLink href="#">
+                        <NavLink to="research">
                             <ResearchIcon/>
                             <LinkText className="link-text">
-                                {bottomTopic}    
+                                {researchText}    
                             </LinkText>
                         </NavLink>
                     </NavItem>
