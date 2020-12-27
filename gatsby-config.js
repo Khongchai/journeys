@@ -15,6 +15,7 @@ module.exports = {
       options: {
         fonts: [
           `limelight`,
+          `montserrat`,
           `source sans pro\:300,400,400i,700` // you can also specify font weights and styles
         ],
         display: 'swap'
@@ -26,6 +27,14 @@ module.exports = {
       {
         name: `dynamicPagesInfo`,
         path: `${__dirname}/src/dynamicPagesInfo`,
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options:
+      {
+        name: `images`,
+        path: `${__dirname}/src/images`,
       }
     },
     `gatsby-plugin-sharp`, 

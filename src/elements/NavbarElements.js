@@ -1,15 +1,16 @@
 import styled from "styled-components";
 import {Link} from "gatsby";
 import React from "react";
+import zIndexPriority from "../themes/z-indexPriority";
 
 export const NavbarWrapper = styled.div`
     //Width matches window's margin.
     width: 5rem;
-
     //Give full size and react accordingly on resize.
     height: 100vh;
     position: fixed;
     background-color: ${props => props.theme.colors.mainPurple};
+    z-index: ${zIndexPriority.Navbar};
 
     :hover
     {

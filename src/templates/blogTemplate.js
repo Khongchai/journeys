@@ -1,19 +1,19 @@
 import React from "react";
 import { graphql } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
+import { Content } from "../components";
 
-const DynamicBlog = ({data, pageContext}) =>
+const DynamicBlog = ({data}) =>
 {
-    const { blogID } = pageContext;
     return(
-    <>
-        <h1>This page belongs to blog of ID {blogID}</h1>
+    <Content>
         <div>
             <MDXRenderer>
                 {data.mdx.body}
             </MDXRenderer>
         </div>
-    </>
+        
+    </Content>
     );           
 }
 

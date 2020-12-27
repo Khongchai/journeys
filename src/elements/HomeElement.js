@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import React from "react";
 import {Link} from "gatsby";
+import zIndexPriority from "../themes/z-indexPriority";
 
 export const HomeElement = styled(props => <Link {...props}/>)`
 
@@ -8,6 +9,7 @@ export const HomeElement = styled(props => <Link {...props}/>)`
     {
         display: none;
     }
+    z-index: ${zIndexPriority.Navbar};
     border-radius: 50%;
     padding: 10px;
     display: block;

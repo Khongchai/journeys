@@ -1,5 +1,6 @@
 import React from "react";
-import {Navbar} from "../components";
+import {Navbar, Container, Footer} from "../components";
+
 
 //Put what you do not want to change in here.
 export default function Layout ({children})
@@ -7,7 +8,11 @@ export default function Layout ({children})
     return(
         <>
             <Navbar/>
-            {children}
+            <Container>
+                {children}
+                <Footer/>
+            </Container>
+            
         </> 
     );
 }

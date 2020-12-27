@@ -2,7 +2,7 @@ export default
 {
     fonts:
     {
-        main: "Muli, sans-serif",
+        main: "Montserrat, Segoe UI, Apple SD Gothic Neo, Lucida Grande, Lucida Sans Unicode, sans‑serif",
         code: "Roboto Mono, monospace",
     },
     colors:
@@ -37,5 +37,9 @@ export default
     shadows: 
     {
         shadow1: "0px 5px 20px rgba(30, 30, 31, 0.05)",
+    },
+    width:
+    {
+        mainContentWidth: "2 / span 12"
     }
 }
