@@ -1,5 +1,6 @@
 import React from "react";
 import {Navbar, Container, Footer} from "../components";
+import "./layout.css";
 
 
 //Put what you do not want to change in here.

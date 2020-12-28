@@ -1,0 +1,1 @@
+continue implement the side contentbar by creating a content bar's ccontent section in another component

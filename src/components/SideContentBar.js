@@ -1,11 +1,13 @@
-import SideContentElements from "../elements";
+import {ContentBarWrapper, RunningLine} from "../elements";
 import React from "react";
+import {SideContentBarContent} from "./index";
 
-export const SideContentBar = ({ children }) => 
+export const SideContentBar = () => 
 {
     return(
-        <SideContentElements>
-            {children}
-        </SideContentElements>
+        <ContentBarWrapper>
+            <RunningLine/>
+            <SideContentBarContent />
+        </ContentBarWrapper>
     );
 };

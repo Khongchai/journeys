@@ -3,8 +3,9 @@ import styled from "styled-components";
 export const ContentWrapper = styled.main`
 
     grid-column: ${props => props.theme.width.mainContentWidth};
-
+    margin-left: 10px;
     padding: 5.5rem;
+    margin-left: 10px;
 
     z-index: 10;
 
@@ -75,8 +76,8 @@ export const ContentWrapper = styled.main`
 
     a
     {
-
-       text-decoration: underline; 
+        
+       text-decoration: none; 
     }
 
     strong

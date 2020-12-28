@@ -1,0 +1,12 @@
+.active
+{
+    /*style this later*/
+    color: #540D6E !important;
+    font-size: 30px;
+    font-weight:bolder;
+}
+
+a
+{
+    transition: .2s;
+}
