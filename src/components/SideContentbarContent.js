@@ -1,15 +1,16 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useRef} from "react";
 import styled from "styled-components";
 
 export const SideContentBarContent = () =>
 {
     const [allHeadingTexts, setAllHeadingTexts] = useState([]);
-    var allHeadingsHTMLElem = document.getElementsByTagName("h1");
+    const allHeadingsHTMLElem = useRef(null);
 
     useEffect(() => 
     {
-        setAllHeadingTexts(getTextFromHTMLAndSetID(allHeadingsHTMLElem));
-        window.addEventListener("scroll", ()=>detectOffScreen(allHeadingsHTMLElem));
+        allHeadingsHTMLElem.current = document.getElementsByTagName("h1");
+        setAllHeadingTexts(getTextFromHTMLAndSetID(allHeadingsHTMLElem.current));
+        window.addEventListener("scroll", ()=>detectOffScreen(allHeadingsHTMLElem.current));
         return () => window.removeEventListener("scroll", detectOffScreen);
       },[]);
 
