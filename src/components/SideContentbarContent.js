@@ -62,6 +62,7 @@ function detectOffScreen(elem)
     }
 }
 
+//refactor so that it can be called from anywhere (might call when someone click one of the links instead of scrolling)
 function moveLineIndicatorHere(sidebarSection)
 {
     let lineIndicator = document.getElementById("line-indicator");
