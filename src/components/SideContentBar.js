@@ -6,7 +6,7 @@ export const SideContentBar = () =>
 {
     return(
         <ContentBarWrapper>
-            <RunningLine/>
+            <RunningLine id="line-indicator"/>
             <SideContentBarContent />
         </ContentBarWrapper>
     );

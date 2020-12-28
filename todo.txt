@@ -1,1 +1,13 @@
-continue implement the side contentbar by creating a content bar's ccontent section in another component
+TODO
+
+set the height of the indicator line to be the height of all elements with 'active' class (height of all + space between)
+
+refactor all the code
+refactor mdx to use markdown id instead of html
+beautify the chronological biography
+add the missing 1876
+expand the size of the scroll bar
+
+if all is done, then you may move on to implementing the main timeline 
+
+and implement subsections as well

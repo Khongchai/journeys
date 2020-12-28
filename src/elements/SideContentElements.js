@@ -16,6 +16,10 @@ export const ContentBarWrapper = styled.div`
         color: black;
         font-weight: normal;
         margin-top: 3rem;
+        :hover
+        {
+            color: ${props => props.theme.colors.mainMagenta} !important;
+        }
     }
     @media ${props => props.theme.breakpoints.mobileAndTablet}
     {
@@ -26,5 +30,9 @@ export const ContentBarWrapper = styled.div`
 export const RunningLine = styled.span`
     position: absolute;
     height: 1rem;
-    background-color: ${props => props.theme.colors.mainYellow};
+    left: -1.6rem;
+    width: 0.3rem;
+    background-color: ${props => props.theme.colors.mainMagenta};
+    top: -20px;
+    transition: .1s;
 `;

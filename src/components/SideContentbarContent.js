@@ -52,6 +52,7 @@ function detectOffScreen(elem)
         let paragraphHeight = parseInt(window.getComputedStyle(document.getElementById(`${elem[i].innerHTML}paragraph`)).getPropertyValue("height"));
         if ((0 - paragraphHeight) < elem[i].getBoundingClientRect().y && elem[i].getBoundingClientRect().y < thresholdFromTop)
         { 
+            moveLineIndicatorHere(sidebarSection);
             sidebarSection.classList.add("active");
         }
         else
@@ -59,4 +60,13 @@ function detectOffScreen(elem)
             sidebarSection.classList.remove("active");
         }
     }
+}
+
+function moveLineIndicatorHere(sidebarSection)
+{
+    let lineIndicator = document.getElementById("line-indicator");
+    let sidebarSectionPosition = sidebarSection.getBoundingClientRect();
+    let sidebarSectionHeight = parseInt(window.getComputedStyle(sidebarSection).getPropertyValue("height"));
+    lineIndicator.style.top = `${sidebarSectionPosition.y}px`;
+    lineIndicator.style.height = `${sidebarSectionHeight}px`;
 }
