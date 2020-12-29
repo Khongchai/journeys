@@ -24,7 +24,6 @@ export const SideContentBarContent = () =>
 };
 
 const ContentBarStyled = styled.div`
-    margin-top: 48px;
 
 `;
 

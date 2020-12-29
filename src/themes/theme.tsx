@@ -12,6 +12,7 @@ export default
         mainMagenta: "#EE4266",
         mainYellow: "#FFD23F",
         mainBlack: "#1F271B",
+        secondaryPink: "#F3EEEE",
     },
     breakpoints: 
     {

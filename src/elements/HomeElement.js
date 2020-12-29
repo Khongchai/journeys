@@ -24,6 +24,6 @@ export const HomeElement = styled(props => <Link {...props}/>)`
     margin: 0.5rem;
     background-color: ${props => props.theme.colors.mainPurple};
 
-    transition: .1s;
+    transition: .05s;
 `;
 

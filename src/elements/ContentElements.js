@@ -70,7 +70,7 @@ export const ContentWrapper = styled.main`
         font-size: 1.125rem;
         line-height: 1.875rem;
         font-weight: 400;
-
+        text-indent: 3rem;
         margin-top: 2rem;
     }
 
@@ -95,16 +95,21 @@ export const ContentWrapper = styled.main`
         text-decoration: line-through;
     }
 
-    bloockquote p 
+    blockquote p
     {
         font-style: italic;
-        font-size: 1.5rem;
+        background-color: ${props=>props.theme.colors.secondaryPink};
+        border-radius: 5px;
+        padding: 1rem;
         line-height: 2.125rem;
-        text-align: center;
         max-width: 36rem;
         margin:3rem auto;
     }
-
+    em
+    {
+        font-size: 0.9rem;
+        display: block;
+    }
     ul,ol
     {
         color: ${props => props.theme.colors.dark2};
