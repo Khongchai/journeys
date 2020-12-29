@@ -1,6 +1,6 @@
 TODO
 
-set the height of the indicator line to be the height of all elements with 'active' class (height of all + space between)
+refactor the function module to typescript
 
 refactor all the code
 beautify the chronological biography

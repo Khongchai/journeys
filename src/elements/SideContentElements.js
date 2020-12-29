@@ -34,5 +34,5 @@ export const RunningLine = styled.span`
     width: 0.3rem;
     background-color: ${props => props.theme.colors.mainMagenta};
     top: -20px;
-    transition: .1s;
+    transition: .05s;
 `;
