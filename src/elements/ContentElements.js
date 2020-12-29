@@ -80,8 +80,10 @@ export const ContentWrapper = styled.main`
        text-decoration: none; 
     }
 
-    strong
+    strong /*sub section*/
     {
+        display: block;
+        margin-top: 2rem;
         font-weight: 700;
     }
 

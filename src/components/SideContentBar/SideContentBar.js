@@ -1,6 +1,6 @@
-import {ContentBarWrapper, RunningLine} from "../elements";
+import {ContentBarWrapper, RunningLine} from "../../elements";
 import React from "react";
-import {SideContentBarContent} from "./index";
+import {SideContentBarContent} from "../index";
 
 export const SideContentBar = () => 
 {
