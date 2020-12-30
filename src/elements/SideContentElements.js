@@ -9,6 +9,7 @@ export const ContentBarWrapper = styled.div`
     grid-column: 14/auto;
     padding-top: 5.5rem;
     top: 0;
+    width: max-content;
     a
     {
         text-decoration: none;
@@ -25,6 +26,12 @@ export const ContentBarWrapper = styled.div`
     @media ${props => props.theme.breakpoints.mobileAndTablet}
     {
         display: none !important;
+    }
+    .subsection-anchor
+    {
+        margin-top: 0.6rem;
+        text-indent: 1rem;
+        font-size: 0.8rem;
     }
 `;
 

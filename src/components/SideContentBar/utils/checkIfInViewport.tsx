@@ -1,4 +1,6 @@
 import manageLineIndicator from "./manageLineIndicator";
+import manageSubSections from "./manageSubsections";
+
 
 //running time = O(n)
 export default function checkIfInViewPort(elems: HTMLCollectionOf<Element>)
@@ -15,9 +17,11 @@ export default function checkIfInViewPort(elems: HTMLCollectionOf<Element>)
         { 
             sidebarSection.classList.add("active");
             manageLineIndicator();
+            manageSubSections(sectionName, "APPEND");
         }
         else
         {
+            manageSubSections(sectionName, "REMOVE");
             sidebarSection.classList.remove("active");
         }
     }

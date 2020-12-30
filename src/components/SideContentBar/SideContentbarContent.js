@@ -14,6 +14,7 @@ export const SideContentBarContent = () =>
         return () => window.removeEventListener("scroll", checkIfInViewport);
       },[]);
 
+      //not a here, but in the child so that you can link to both the main and sub sections
     return(
         <>
             {allHeadingTexts.map(heading => (

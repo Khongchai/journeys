@@ -8,7 +8,7 @@ export default function manageLineIndicator()
         let sidebarSectionMargin: number = parseInt(firstActiveElemProperties.getPropertyValue("margin-top"));
     
         let lineIndicator: HTMLElement = document.getElementById("line-indicator");
-        let lineIndicatorHeight: number = getHeightOfAllActiveElements(sidebarSectionHeight, allActiveElements.length);
+        let lineIndicatorHeight: number = getHeightOfAllActiveElements(allActiveElements);
         let sideBarSectionsMargin: number = getMarginOfAllActiveElements(sidebarSectionMargin, allActiveElements.length);
         let lineIndicatorPosition: number = allActiveElements[0].getBoundingClientRect().y ;
     
@@ -17,9 +17,14 @@ export default function manageLineIndicator()
     }
 }
 
-function getHeightOfAllActiveElements(heightOfOneElement: number, lengthOfAllActiveElem: number): number
+function getHeightOfAllActiveElements(allActiveElements: HTMLCollectionOf<Element>): number
 {
-    let allHeight: number = lengthOfAllActiveElem * heightOfOneElement;
+    //if the section has subsections, take its height
+    let allHeight: number = 0;
+    for (let elem of allActiveElements)
+    {
+        allHeight += parseInt(window.getComputedStyle(elem).getPropertyValue("height"));
+    }
     return allHeight;
 }
 
