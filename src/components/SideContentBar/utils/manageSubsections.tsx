@@ -26,7 +26,7 @@ export default function manageSubSections(sectionName: string, operation: string
     }
     else if (operation === "REMOVE" && haveChildrenAlready(sidebarSection))
     {
-        for (let i = 1; i < subSecLength; i++)
+        for (let i = 0; i < subSecLength; i++)
         {
             sidebarSection.removeChild(sidebarSection.lastElementChild);
         }

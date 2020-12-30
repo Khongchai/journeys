@@ -4,7 +4,6 @@ export default function manageLineIndicator()
     if (allActiveElements.length > 0)
     {
         let firstActiveElemProperties: CSSStyleDeclaration = window.getComputedStyle(allActiveElements[0]);
-        let sidebarSectionHeight: number = parseInt(firstActiveElemProperties.getPropertyValue("height"));
         let sidebarSectionMargin: number = parseInt(firstActiveElemProperties.getPropertyValue("margin-top"));
     
         let lineIndicator: HTMLElement = document.getElementById("line-indicator");
