@@ -8,7 +8,7 @@ export default function checkIfInViewPort(elems: HTMLCollectionOf<Element>)
 {
     //this function is doing too many things; refactor.
     //threshold defines the point where elements remain active, eg. threold = 0.9 means active for 90% of the screen's height.
-    let thresholdFromTop: number = document.documentElement.clientHeight * 0.9;
+    let thresholdFromTop: number = document.documentElement.clientHeight * 1.1;
     let elemLength: number = elems.length;
     for (let i = 0; i < elemLength; i++)
     {

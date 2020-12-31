@@ -3,13 +3,27 @@ import styled from "styled-components";
 export const ContentBarWrapper = styled.div`
     display: flex;
     flex-direction: column;
-    height: fit-content;
+    height: 100vh;
     position: -webkit-sticky;
     position: sticky;
     grid-column: 14/auto;
-    padding-top: 5.5rem;
+    padding-top: 3rem;
     top: 0;
     width: max-content;
+    ::-webkit-scrollbar
+    {
+        display: none;
+    }
+    
+    ::-webkit-scrollbar-track
+    {
+        display: none;
+    }
+
+    ::-webkit-scrollbar-thumb
+    {
+        display: none;
+    }
     a
     {
         text-decoration: none;
@@ -43,4 +57,5 @@ export const RunningLine = styled.span`
     background-color: ${props => props.theme.colors.mainMagenta};
     top: -20px;
     transition: .05s;
+    border-radius: 3px;
 `;

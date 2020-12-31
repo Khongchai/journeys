@@ -1,0 +1,4 @@
+---
+title: Method
+slug: method
+---

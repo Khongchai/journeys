@@ -16,9 +16,10 @@ export const Navbar = () =>
     const projectName = "Journeys";
     const bioText = "Biography";
     const aboutText = "About";
-    const analysisText = "Analysis";
+    const approachText = "Approach";
     const creditText = "Credit";
-    const researchText = "Research";
+    const analysisText = "Analysis";
+    
     useEffect(() => 
     {
         handleHomeButtonDrag();
@@ -62,10 +63,19 @@ export const Navbar = () =>
                     </NavItem>
 
                     <NavItem className="nav-item">
-                        <NavLink to="analysis">
+                        <NavLink to="/researh">
+                            <ResearchIcon/>
+                            <LinkText className="link-text">
+                                {approachText}                            
+                            </LinkText>
+                        </NavLink>
+                    </NavItem>
+
+                    <NavItem className="nav-item">
+                        <NavLink to="/method">
                             <AnalysisIcon/>
                             <LinkText className="link-text">
-                                {analysisText}                            
+                                {analysisText}    
                             </LinkText>
                         </NavLink>
                     </NavItem>
@@ -75,15 +85,6 @@ export const Navbar = () =>
                             <CreditIcon/>
                             <LinkText className="link-text">
                                 {creditText}
-                            </LinkText>
-                        </NavLink>
-                    </NavItem>
-                        
-                    <NavItem className="nav-item">
-                        <NavLink to="research">
-                            <ResearchIcon/>
-                            <LinkText className="link-text">
-                                {researchText}    
                             </LinkText>
                         </NavLink>
                     </NavItem>

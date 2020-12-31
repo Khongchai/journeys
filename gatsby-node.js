@@ -5,14 +5,13 @@ exports.createPages = async function({actions, graphql})
     const {data} = await graphql
     (`
     query{
-        allMdx {
+        allMdx(limit: 4) {
           edges {
             node {
               id
               frontmatter {
                 slug
               }
-              
             }
           }
         }

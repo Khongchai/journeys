@@ -6,19 +6,29 @@ export const SideContentBarContent = () =>
     const [allHeadingTexts, setAllHeadingTexts] = useState([]);
     const allHeadingsHTMLElem = useRef(null);
 
+    //this variable prevents the scroll listener from running in pages without this sidebar
+    const pageWithSidebar = useRef(true);
+
     useEffect(() => 
     {
         allHeadingsHTMLElem.current = document.getElementsByTagName("h1");
         setAllHeadingTexts(getTextFromHTMLAndSetID(allHeadingsHTMLElem.current));
-        window.addEventListener("scroll", ()=>checkIfInViewport(allHeadingsHTMLElem.current));
-        return () => window.removeEventListener("scroll", checkIfInViewport);
+        window.addEventListener("scroll", function viewPortCheck(){
+            if (pageWithSidebar.current)
+            {
+                checkIfInViewport(allHeadingsHTMLElem.current)
+            }
+        });
       },[]);
 
-      //not a here, but in the child so that you can link to both the main and sub sections
     return(
         <>
             {allHeadingTexts.map(heading => (
-                <a href={`#${heading}`} onClick={() => {checkIfInViewport(allHeadingsHTMLElem.current)}} id={`sidebar${heading}`} className="sidebar-sections" key={heading}>{heading}</a>
+                <a href={`#${heading}`} onClick={() => {
+                    checkIfInViewport(allHeadingsHTMLElem.current);
+                    return true;
+                    }
+                } id={`sidebar${heading}`} className="sidebar-sections" key={heading}>{heading}</a>
             ))}
         </>
     )

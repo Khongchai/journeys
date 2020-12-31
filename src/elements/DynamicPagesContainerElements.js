@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ContainerWrapper = styled.div`
+export const DynamicPagesWrapper = styled.div`
     height: fit-content;
     display: grid;
     grid-template-columns: 1fr repeat(16, minmax(auto, 4.2rem)) 1fr;

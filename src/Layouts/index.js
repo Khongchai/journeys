@@ -1,5 +1,5 @@
 import React from "react";
-import {Navbar, Container, Footer} from "../components";
+import {Navbar} from "../components";
 import "./layout.css";
 
 
@@ -9,11 +9,7 @@ export default function Layout ({children})
     return(
         <>
             <Navbar/>
-            <Container>
                 {children}
-                <Footer/>
-            </Container>
-            
         </> 
     );
 }

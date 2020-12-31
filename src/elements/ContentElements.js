@@ -24,35 +24,35 @@ export const ContentWrapper = styled.main`
     }
     h1
     {
-        font-size: 2.25rem;
+        font-size: 2rem;
         line-height: 2.5rem;
         font-weight: 400;
     }
 
     h2
     {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
         line-height: 1.875rem;
         font-weight: 400;
     }
 
     h3
     {
-        font-size: 1.375rem;
+        font-size: 1.175rem;
         line-height: 1.625rem;
         font-weight: 700;
     }
 
     h4
     {
-        font-size: 1.25rem;
+        font-size: 1rem;
         line-height: 1.5rem;
         font-weight: 400;
     }
 
     h5
     {
-        font-size: 1.125rem;
+        font-size: 0.9rem;
         line-height: 1.375rem;
         font-weight: 700;
     }
@@ -67,10 +67,10 @@ export const ContentWrapper = styled.main`
 
     p
     {
-        font-size: 1.125rem;
+        font-size: 0.9rem;
         line-height: 1.875rem;
         font-weight: 400;
-        text-indent: 3rem;
+        text-indent: 2.1rem;
         margin-top: 2rem;
     }
 
@@ -101,7 +101,7 @@ export const ContentWrapper = styled.main`
     {
         font-style: italic;
         background-color: ${props=>props.theme.colors.secondaryPink};
-        border-radius: 5px;
+        border-radius: 6px;
         padding: 1rem;
         line-height: 2.125rem;
         max-width: 36rem;

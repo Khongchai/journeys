@@ -1,21 +1,22 @@
 import React from "react";
 import { graphql } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
-import { Content, SideContentBar } from "../components";
+import { Content, SideContentBar, Footer, DynamicPagesContainer } from "../components";
 
 const DynamicBlog = ({data}) =>
 {
     return(
-        <>
-        <Content>
-        <div>
-            <MDXRenderer>
-                {data.mdx.body}
-            </MDXRenderer>
-        </div>
-        </Content>
-        <SideContentBar/>
-        </>
+        <DynamicPagesContainer id="dynamic-page-container">
+            <Content>
+            <div>
+                <MDXRenderer>
+                    {data.mdx.body}
+                </MDXRenderer>
+            </div>
+            </Content>
+            <SideContentBar/>
+            <Footer/>
+        </DynamicPagesContainer>
     
     );           
 }

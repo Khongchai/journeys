@@ -37,6 +37,14 @@ module.exports = {
         path: `${__dirname}/src/images`,
       }
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options:
+      {
+        name: `markdownForTimeline`,
+        path: `${__dirname}/src/markdownForTimeline`,
+      }
+    },
     `gatsby-plugin-sharp`, 
     `gatsby-plugin-layout`,
     `gatsby-transformer-sharp`,

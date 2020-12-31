@@ -2,10 +2,16 @@ TODO
 
 
 refactor all the code
-expand the size of the scroll bar
 
 if all is done, then you may move on to implementing the main timeline 
 
-and implement subsections for side bar as well
-
 why do you have to double quick the "a" to jump from section to section?
+try resetting the global z-index to 0
+
+What should be in each section:
+
+research =>  change name to approach, like how you approach the arrangement
+analysis => everything concerning the analysis: from folk analysis to the concerto itself
+
+
+Tell Gatsby to not include the mdx from markdownForTimeline
