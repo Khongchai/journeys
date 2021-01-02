@@ -1,5 +1,5 @@
-import {TimelineWrapper, YearWrapper} from "../../elements";
-import React, {useEffect} from "react";
+import {TimelineWrapper} from "../../elements";
+import React, {useEffect, useRef} from "react";
 import {useStaticQuery, graphql} from "gatsby";
 
 
@@ -17,13 +17,24 @@ export default function Timeline(props)
                         frontmatter 
                         {
                             year
-                            slug
                             topic1
                             topic2
                             topic3
                             topic1month
+                            {
+                                from
+                                to
+                            }
                             topic2month
+                            {
+                                from
+                                to
+                            }
                             topic3month
+                            {
+                                from
+                                to
+                            }
                             topic1except
                             topic2excerpt
                             topic3excerpt
@@ -34,47 +45,69 @@ export default function Timeline(props)
             }
         }
     `);
-    const frontmatterData = query.allMdx.edges.map(edge => edge.node.frontmatter);
+    //store this in useRef
+    const frontmatterData = useRef(query.allMdx.edges.map(edge => edge.node.frontmatter));
+
+    useEffect(() => {
+        manageEventStartAndEndPosition(frontmatterData.current);
+    }, []);
 
     return(
         <TimelineWrapper>
-            {frontmatterData.map(data => <YearComponent key={data.year} data={data}/>)}
+            {frontmatterData.current.map(data => {
+                return(
+                    <>
+                        <h5 style={{position: "relative", top: "-2rem", gridRow: "1", gridColumn: "span 12"}}>
+                            {data.year}
+                        </h5>
+                        <span style={{gridRow: "2"}} key={data.topic1} className="event">
+                            {data.topic1}
+                        </span>
+                        {
+                        !data.topic2? <span className="event empty-placeholder" style={{display: "none"}}></span>:
+                            <span style={{gridRow: "3"}} key={data.topic2}  className="event">
+                                {data.topic2}
+                            </span>
+                        }
+                        {
+                        !data.topic3? <span className="event empty-placeholder" style={{display: "none"}}></span>:
+                            <span style={{gridRow: "4"}} key={data.topic3}  className="event">
+                                {data.topic3}
+                            </span>
+                        }
+                        
+
+
+                    </>
+                )
+            })}
         </TimelineWrapper>
     )
 }
 
-function YearComponent(props)
+
+function manageEventStartAndEndPosition(eventData)
 {
-    useEffect(() => {
-        manageEventStartingAndEndingPosition(props.data);
-    },[]);
+    let allEvents = document.getElementsByClassName("event");
+    let allEventsLength = allEvents.length;
+    let topicPerNode = 3;
 
-    return(
-        <>
-            <YearWrapper>
-                <h5 style={{position: "relative", gridColumn: "1", gridRow: "1", top: "-1rem"}}>
-                    {props.data.year}
-                </h5>
-                <span style={{gridColumn: "1", gridRow: "1"}} className="event">
+    let j = 0;
+    let monthOffset = 0;
 
-                </span>
-                <span style={{gridColumn: "2", gridRow: "2"}} className="event"> 
+    for (let i = 0; i < allEventsLength; i+=topicPerNode)
+    {
+        //For overlapping events, check if the subsequent rows are empty, if so, move there.
+        console.log(allEvents[i],)
+       allEvents[i].style.gridColumn = `${eventData[j].topic1month.from + monthOffset} / ${eventData[j].topic1month.to + monthOffset}`;
+       allEvents[i+1].style.gridColumn = `${eventData[j].topic2month.from + monthOffset} / ${eventData[j].topic1month.to + monthOffset}`;
+       allEvents[i+2].style.gridColumn = `${eventData[j].topic3month.from + monthOffset} / ${eventData[j].topic1month.to + monthOffset}`;
+       j++;
+       monthOffset += 12;
+    }
 
-                </span>
-                <span style={{gridColumn: "3", gridRow: "3"}} className="event">
 
-                </span>
-
-            </YearWrapper>
-        </>
-
-    );
-}
-
-//TO be continued
-function manageEventStartingAndEndingPosition(eventData)
-{
-
+    //give grid column property for each member of the "event" class based on the topic
 }
 
 

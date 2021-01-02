@@ -31,38 +31,67 @@ export const OverviewDescription = styled.div`
 
 export const TimelineWrapper = styled.div`
     width: 100%;
-    flex: 1.3 1.3;
+    flex: 1 1;
     display: grid;
-    grid-template-columns: repeat(9, minmax(auto, 1fr));
+    grid-template-columns: repeat(108, minmax(1px, 1fr));
+    grid-template-rows: 0 0.15fr 0.15fr 0.15fr 0.15fr 0.15fr auto;
+    row-gap:0;
     opacity: 0.6;
+    
     :hover
     {
         opacity: 1 !important;
     }
     transition: opacity .3s;
-
-
-`;
-
-export const YearWrapper = styled.div`
-    grid-column: span 1;
-    width: 100%;
-    height: 100%;
     background-color: black;
     color: ${props => props.theme.colors.mainBlack};
-
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr ;
-    grid-template-rows: 0.175fr 0.175fr 0.175fr 0.175fr auto;
-    row-gap: 1.4rem;
+    grid-gap: 0.5rem;
 
     span
     {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        font-size: 0.95rem;
+        text-overflow: ellipsis !important;
+        white-space: nowrap;
+        overflow: hidden;
+        margin-left: 0.09rem;
+        margin-right: 0.09rem;
+        min-width: 2.275rem;
+        ::-webkit-scrollbar
+        {
+            display: none;
+        }
+        ::-webkit-scrollbar-track
+        {
+            display: none;
+        }
+
+        ::-webkit-scrollbar-thumb
+        {
+            display: none;
+        }
+        :hover
+        {
+            min-width: 16rem !important;
+            cursor: pointer;
+            z-index: 100;
+            background-color: ${props=> props.theme.colors.mainYellow}
+        }
         background-color: ${props=>props.theme.colors.mainMagenta};
-        width: "fit-content";
-        min-width: 0;
-        min-height: 0;
-        overflow: auto;
+        padding: 0.4rem;
+
+        -webkit-transition: min-width .3s ease;
+        transition:  min-width .3s ease;
+   }
+    h5
+    {
+        grid-column: span 12;
     }
 
+
 `;
+
+
+

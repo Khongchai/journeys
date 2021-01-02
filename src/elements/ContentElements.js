@@ -71,7 +71,7 @@ export const ContentWrapper = styled.main`
         line-height: 1.875rem;
         font-weight: 400;
         text-indent: 2.1rem;
-        margin-top: 2rem;
+        margin-top: 1.245rem;
     }
 
     a

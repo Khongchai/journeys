@@ -11,7 +11,7 @@ export const MainWindow = () =>
             <OverviewPictureView>Overview Picture view</OverviewPictureView>
             <OverviewDescription>Overview Description</OverviewDescription>
         </Overview>
-        <Timeline>Timeline</Timeline>
+        <Timeline/>
     </LandingPageWrapper>
     );
 }
