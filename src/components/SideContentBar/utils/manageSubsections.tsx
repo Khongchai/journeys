@@ -1,4 +1,3 @@
-import React, { AnchorHTMLAttributes } from "react";
 
 export default function manageSubSections(sectionName: string, operation: string)
 {

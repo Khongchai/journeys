@@ -34,6 +34,14 @@ export const TimelineWrapper = styled.div`
     flex: 1.3 1.3;
     display: grid;
     grid-template-columns: repeat(9, minmax(auto, 1fr));
+    opacity: 0.6;
+    :hover
+    {
+        opacity: 1 !important;
+    }
+    transition: opacity .3s;
+
+
 `;
 
 export const YearWrapper = styled.div`
@@ -41,15 +49,20 @@ export const YearWrapper = styled.div`
     width: 100%;
     height: 100%;
     background-color: black;
-    transition: opacity .3s;
     color: ${props => props.theme.colors.mainBlack};
 
-    opacity: 0.6;
-    :hover
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    grid-template-rows: 0.175fr 0.175fr 0.175fr 0.175fr auto;
+    row-gap: 1.4rem;
+
+    span
     {
-        opacity: 0.9 !important;
+        background-color: ${props=>props.theme.colors.mainMagenta};
+        width: "fit-content";
+        min-width: 0;
+        min-height: 0;
+        overflow: auto;
     }
-    
-    display: flex;
-    flex-direction: column;
+
 `;

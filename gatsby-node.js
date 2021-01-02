@@ -5,7 +5,7 @@ exports.createPages = async function({actions, graphql})
     const {data} = await graphql
     (`
     query{
-        allMdx(limit: 4) {
+        allMdx(filter: {frontmatter: {type: {eq: "dynamic"}}}) {
           edges {
             node {
               id

@@ -26,7 +26,7 @@ module.exports = {
       options: 
       {
         name: `dynamicPagesInfo`,
-        path: `${__dirname}/src/dynamicPagesInfo`,
+        path: `${__dirname}/src/markdown/dynamicPagesInfo`,
       }
     },
     {
@@ -42,7 +42,7 @@ module.exports = {
       options:
       {
         name: `markdownForTimeline`,
-        path: `${__dirname}/src/markdownForTimeline`,
+        path: `${__dirname}/src/markdown/markdownForTimeline`,
       }
     },
     `gatsby-plugin-sharp`, 
