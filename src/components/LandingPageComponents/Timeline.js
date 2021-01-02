@@ -1,4 +1,4 @@
-import {TimelineWrapper} from "../../elements";
+import {TimelineWrapper, YearIndicator} from "../../elements";
 import React, {useEffect, useRef} from "react";
 import {useStaticQuery, graphql} from "gatsby";
 
@@ -53,25 +53,30 @@ export default function Timeline(props)
     }, []);
 
     return(
+        <>
+        <YearIndicator>
+            {frontmatterData.current.map(data => 
+                    <h5 >
+                        {data.year}
+                    </h5>) 
+                        }
+        </YearIndicator>
         <TimelineWrapper>
             {frontmatterData.current.map(data => {
                 return(
                     <>
-                        <h5 style={{position: "relative", top: "-2rem", gridRow: "1", gridColumn: "span 12"}}>
-                            {data.year}
-                        </h5>
-                        <span style={{gridRow: "2"}} key={data.topic1} className="event">
+                        <span style={{gridRow: "1"}} key={data.topic1} className="event">
                             {data.topic1}
                         </span>
                         {
                         !data.topic2? <span className="event empty-placeholder" style={{display: "none"}}></span>:
-                            <span style={{gridRow: "3"}} key={data.topic2}  className="event">
+                            <span style={{gridRow: "2"}} key={data.topic2}  className="event">
                                 {data.topic2}
                             </span>
                         }
                         {
                         !data.topic3? <span className="event empty-placeholder" style={{display: "none"}}></span>:
-                            <span style={{gridRow: "4"}} key={data.topic3}  className="event">
+                            <span style={{gridRow: "3"}} key={data.topic3}  className="event">
                                 {data.topic3}
                             </span>
                         }
@@ -82,6 +87,8 @@ export default function Timeline(props)
                 )
             })}
         </TimelineWrapper>
+        </>
+        
     )
 }
 
@@ -92,18 +99,31 @@ function manageEventStartAndEndPosition(eventData)
     let allEventsLength = allEvents.length;
     let topicPerNode = 3;
 
+    //for managing columns
     let j = 0;
     let monthOffset = 0;
 
+    //for managing rows
+    let rowCheck = {
+        first: 0,
+        second: 0,
+        third: 0,
+        fourth: 0,
+        fifth: 0,
+    };
+
     for (let i = 0; i < allEventsLength; i+=topicPerNode)
     {
-        //For overlapping events, check if the subsequent rows are empty, if so, move there.
-        console.log(allEvents[i],)
-       allEvents[i].style.gridColumn = `${eventData[j].topic1month.from + monthOffset} / ${eventData[j].topic1month.to + monthOffset}`;
-       allEvents[i+1].style.gridColumn = `${eventData[j].topic2month.from + monthOffset} / ${eventData[j].topic1month.to + monthOffset}`;
-       allEvents[i+2].style.gridColumn = `${eventData[j].topic3month.from + monthOffset} / ${eventData[j].topic1month.to + monthOffset}`;
-       j++;
-       monthOffset += 12;
+        //manage column
+        allEvents[i].style.gridColumn = `${eventData[j].topic1month.from + monthOffset} / ${eventData[j].topic1month.to + monthOffset}`;
+        allEvents[i+1].style.gridColumn = `${eventData[j].topic2month.from + monthOffset} / ${eventData[j].topic1month.to + monthOffset}`;
+        allEvents[i+2].style.gridColumn = `${eventData[j].topic3month.from + monthOffset} / ${eventData[j].topic1month.to + monthOffset}`;
+        j++;
+        monthOffset += 12;
+
+        //manage row
+
+
     }
 
 

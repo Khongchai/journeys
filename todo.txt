@@ -10,8 +10,4 @@ try resetting the global z-index to 0
 
 What should be in each section:
 
-research =>  change name to approach, like how you approach the arrangement
-analysis => everything concerning the analysis: from folk analysis to the concerto itself
-
-
-Tell Gatsby to not include the mdx from markdownForTimeline
+check why time indicator resize but timeline doesn't

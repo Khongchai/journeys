@@ -34,9 +34,9 @@ export const TimelineWrapper = styled.div`
     flex: 1 1;
     display: grid;
     grid-template-columns: repeat(108, minmax(1px, 1fr));
-    grid-template-rows: 0 0.15fr 0.15fr 0.15fr 0.15fr 0.15fr auto;
+    grid-template-rows: 0.15fr 0.15fr 0.15fr 0.15fr 0.15fr auto;
     row-gap:0;
-    opacity: 0.6;
+    opacity: 0.9;
     
     :hover
     {
@@ -58,7 +58,7 @@ export const TimelineWrapper = styled.div`
         overflow: hidden;
         margin-left: 0.09rem;
         margin-right: 0.09rem;
-        min-width: 2.275rem;
+        min-width: 3rem;
         ::-webkit-scrollbar
         {
             display: none;
@@ -89,9 +89,17 @@ export const TimelineWrapper = styled.div`
     {
         grid-column: span 12;
     }
-
-
 `;
 
+export const YearIndicator = styled.div`
+    flex: 0.1;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(9, minmax(auto, 1fr));
+    h5
+    {
+        height: fit-content;
+    }
+`;
 
 
