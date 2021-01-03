@@ -7,6 +7,7 @@ module.exports = {
     description: "Khongchai's 2021 Graduate Recital",
     author: "Khongchai",
   },
+  
   plugins: 
   [
     "gatsby-plugin-styled-components",

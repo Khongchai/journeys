@@ -1,4 +1,4 @@
-export * from "./Navbar";
+export * from "./Navbar/Navbar";
 export * from "./LandingPageComponents/MainWindow";
 export * from "./Content";
 export * from "./DynamicPagesContainer";

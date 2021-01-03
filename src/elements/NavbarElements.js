@@ -28,7 +28,7 @@ export const NavbarWrapper = styled.div`
 
     }
 
-    transition: 200ms ease;
+    transition: position 200ms ease, width 200ms ease;
     cursor: context-menu;
 
     @media ${props => props.theme.breakpoints.mobileAndTablet}

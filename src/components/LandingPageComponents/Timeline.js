@@ -1,7 +1,9 @@
-import {TimelineWrapper, YearIndicator} from "../../elements";
-import React, {useEffect, useRef} from "react";
+import {TimelineWrapper, YearIndicator, EventsWrapper, HideTimeline} from "../../elements";
+import React, {useEffect, useRef, useState} from "react";
 import {useStaticQuery, graphql} from "gatsby";
-
+import changeStylesOnClick from "./utils/changeStylesOnClick.ts";
+import hideTimeline from "./utils/hideTimeline.ts";
+import handleTimelineMove from "./utils/handleTimelineMove";
 
 export default function Timeline(props)
 {
@@ -47,61 +49,55 @@ export default function Timeline(props)
     `);
     //store this in useRef
     const frontmatterData = useRef(query.allMdx.edges.map(edge => edge.node.frontmatter));
+    const [toggle, setToggle] = useState(true);
 
     useEffect(() => {
         manageEventStartAndEndPosition(frontmatterData.current);
+        handleTimelineMove();
     }, []);
 
     return(
         <>
-        <YearIndicator>
-            {frontmatterData.current.map(data => 
-                    <h5 >
-                        {data.year}
-                    </h5>) 
-                        }
-        </YearIndicator>
-        <TimelineWrapper>
-            {frontmatterData.current.map(data => {
-                return(
-                    <>
-                        <span key={data.topic1} className="event">
-                            {data.topic1}
-                        </span>
-                        {
-                        !data.topic2? <span className="event empty-placeholder" style={{display: "none"}}></span>:
-                            <span key={data.topic2}  className="event">
-                                {data.topic2}
-                            </span>
-                        }
-                        {
-                        !data.topic3? <span className="event empty-placeholder" style={{display: "none"}}></span>:
-                            <span key={data.topic3}  className="event">
-                                {data.topic3}
-                            </span>
-                        }
-                        
-
-
-                    </>
-                )
-            })}
-        </TimelineWrapper>
+            <HideTimeline onClick={(e) => hideTimeline(e.target, setToggle, toggle)} >Hide Timeline</HideTimeline>
+            <TimelineWrapper id="timeline-wrapper">
+                <YearIndicator>
+                    {frontmatterData.current.map(data => 
+                            <h5 >
+                                {data.year}
+                            </h5>) 
+                                }
+                </YearIndicator>
+                <EventsWrapper>
+                    {frontmatterData.current.map(data => {
+                        return(
+                            <>
+                                <span key={data.topic1} className="event">
+                                    <p>{data.topic1}</p>
+                                </span>
+                                {
+                                !data.topic2? <span className="event empty-placeholder" style={{display: "none"}}></span>:
+                                    <span key={data.topic2}  className="event">
+                                        <p>{data.topic2}</p>
+                                    </span>
+                                }
+                                {
+                                !data.topic3? <span className="event empty-placeholder" style={{display: "none"}}></span>:
+                                    <span key={data.topic3}  className="event">
+                                        <p>{data.topic3}</p>
+                                    </span>
+                                }
+                            </>
+                        )
+                    })}
+                </EventsWrapper>
+            </TimelineWrapper>
+        
         </>
         
     )
 }
 
-//for managing rows
-let rowCheck = {
-    first: 0,
-    second: 0,
-    third: 0,
-    fourth: 0,
-    fifth: 0,
-};
-
-function manageEventStartAndEndPosition(eventData)
+async function manageEventStartAndEndPosition(eventData)
 {
     let allEvents = document.getElementsByClassName("event");
     let allEventsLength = allEvents.length;
@@ -110,6 +106,15 @@ function manageEventStartAndEndPosition(eventData)
     //for managing columns
     let j = 0;
     let monthOffset = 0;
+
+    //for managing rows
+    let rowCheck = {
+        first: 0,
+        second: 0,
+        third: 0,
+        fourth: 0,
+        fifth: 0,
+    };
 
 
 
@@ -127,14 +132,19 @@ function manageEventStartAndEndPosition(eventData)
         allEvents[i].style.gridColumn = `${begin1} / ${end1}`;
         allEvents[i+1].style.gridColumn = `${begin2} / ${end2}`;
         allEvents[i+2].style.gridColumn = `${begin3} / ${end3}`;
-        j++;
-        monthOffset += 12;
 
         //manage row
-        //bug -> only work with differnt event, not the same one
-        allEvents[i].style.gridRow = checkIfColumnIsAvailableAtRowX(end1, rowCheck);
-        allEvents[i+1].style.gridRow = checkIfColumnIsAvailableAtRowX(end2, rowCheck);
-        allEvents[i+2].style.gridRow = checkIfColumnIsAvailableAtRowX(end3, rowCheck);
+        allEvents[i].style.gridRow = await checkIfColumnIsAvailableAtRowX(begin1, end1, rowCheck);
+        allEvents[i+1].style.gridRow = await checkIfColumnIsAvailableAtRowX(begin2, end2, rowCheck);
+        allEvents[i+2].style.gridRow = await checkIfColumnIsAvailableAtRowX(begin3, end3, rowCheck);
+
+        //change styling on click
+        changeStylesOnClick(allEvents[i]);
+        changeStylesOnClick(allEvents[i + 1]);
+        changeStylesOnClick(allEvents[i + 2]);
+
+        monthOffset += 12;
+        j++;
 
     }
 
@@ -142,25 +152,25 @@ function manageEventStartAndEndPosition(eventData)
     //give grid column property for each member of the "event" class based on the topic
 }
 
-function checkIfColumnIsAvailableAtRowX(endVal, rowCheck)
+async function checkIfColumnIsAvailableAtRowX(beginVal, endVal, rowCheck)
 {
     let beginningPosition;
-    if (endVal > rowCheck.first)
+    if (beginVal > rowCheck.first)
     {
         beginningPosition = "1";
         rowCheck.first = endVal;
     }
-    else if (endVal > rowCheck.second)
+    else if (beginVal > rowCheck.second)
     {
         beginningPosition = "2";
         rowCheck.second = endVal;
     }
-    else if (endVal > rowCheck.third)
+    else if (beginVal > rowCheck.third)
     {
         beginningPosition = "3";
         rowCheck.third = endVal;
     }
-    else if (endVal > rowCheck.fourth)
+    else if (beginVal > rowCheck.fourth)
     {
         beginningPosition = "4";
         rowCheck.fourth = endVal;

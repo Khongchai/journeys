@@ -4,11 +4,10 @@ import
     NavbarNav, NavLink, HomeIcon, BiographyIcon, AboutIcon,
     Logo, CreditIcon, AnalysisIcon, ResearchIcon
 
-} from "../elements";
-import { HomeElement } from "../elements";
+} from "../../elements";
+import { HomeElement } from "../../elements";
 import React, {useEffect} from "react";
-import handleHomeButtonDrag, {checkIfOffScreen} from "../utils/handleHomeButtonDrag";
-
+import handleHomeButtonDrag, {checkIfOffScreen} from "./utils/handleHomeButtonDrag";
 
 
 export const Navbar = () =>
