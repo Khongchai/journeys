@@ -67,7 +67,7 @@ export default function Timeline(props)
                             </h5>) 
                                 }
                 </YearIndicator>
-                <EventsWrapper>
+                <EventsWrapper id="events-wrapper">
                     {frontmatterData.current.map(data => {
                         return(
                             <>

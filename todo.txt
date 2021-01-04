@@ -5,9 +5,10 @@ refactor all the code
 
 if all is done, then you may move on to implementing the main timeline 
 
-why do you have to double quick the "a" to jump from section to section?
+why do you have to double click the "a" to jump from section to section?
 try resetting the global z-index to 0
 
-What should be in each section:
+Timeline move >> problem: find a way to let the user continue their scroll after they hit the threshold on the left and right. // fix the issue where timeline does not move at all
 
-check why time indicator resize but timeline doesn't
+Timeline indicator
+Timeline picture and description
