@@ -38,7 +38,6 @@ function stop()
 {
     offsetX = differenceX;
     offsetY = differenceY;
-    //TODO, refactor this into a module
     checkIfOffScreen();
 
 }

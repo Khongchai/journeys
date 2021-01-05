@@ -1,11 +1,15 @@
 import allowScroll from "./allowScroll";
-var initialX: number;
+import ComputeMouseDragDirection from "./ComputeMouseDragDirection";
+
 
 //offsetX and Y are needed beccause setTranslate doesn't actually change the css position
 //so something needs to keep track of where the position of the element is
 var offsetX: number = 0;
-var differenceX: number;
+var initialX: number;
+var relativeDragX: number;
 var timeline: HTMLElement;
+
+var dragDirection: ComputeMouseDragDirection = ComputeMouseDragDirection.getInstance();
 
 export default function handleTimelineMove()
 {
@@ -32,43 +36,55 @@ function start(e: any)
     {
         initialX = e.touches[0].clientX;
     }
+    dragDirection.setBeginPos(initialX);
     
 }
+
 
 function move(e: any)
 {
     e.preventDefault();
-    if (e.type === "mousemove")
-    {
-        //console.log("mousemove")
-        
-        differenceX = (e.clientX - initialX) + offsetX;
-        //console.log(`differenceX = ${differenceX}`)
-    }
-    else if (e.type === "touchmove")
-    {
-        //console.log("touchmove")
-        differenceX = (e.touches[0].clientX - initialX) + offsetX;
-    }
 
-    if (allowScroll(timeline))
-    {
-        //console.log("apply transform")
-        moveTimeline(differenceX);
+    let newAbsoluteDragX = e.type==="mousemove"? e.clientX : e.touches[0].clientX;
+    dragDirection.setDragPos(newAbsoluteDragX);
+
+    let canScrollInfo: {allowScroll: boolean, bypass: boolean} = allowScroll(timeline, dragDirection.getDragDirection());
+    
+    if (canScrollInfo.allowScroll || canScrollInfo.bypass)
+    {        
+        relativeDragX = e.type==="mousemove"? (e.clientX - initialX) + offsetX : (e.touches[0].clientX - initialX) + offsetX;
+        moveTimeline(relativeDragX);  
     }
+    else
+    {
+        if (dragDirection.getDragDirection() === "RIGHT")
+        {
+            offsetX -= 1;
+        }
+        else
+        {
+            offsetX += 1;
+        }
+        
+    }
+    
 
 }
 
 function stop()
 {
-    console.log("stop")
-    offsetX = differenceX;
+    offsetX = relativeDragX;
     timeline.removeEventListener("mousemove", move);
 
 }
 
+
+
 function moveTimeline(newX: number)
 {
+
     timeline.style.transform = `translate3d(${newX}px, 0, 0)`;
 }
+
+
 
