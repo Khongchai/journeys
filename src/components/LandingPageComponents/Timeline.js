@@ -3,9 +3,11 @@ import React, {useEffect, useRef, useState} from "react";
 import {useStaticQuery, graphql} from "gatsby";
 import changeStylesOnClick from "./utils/changeStylesOnClick.ts";
 import hideTimeline from "./utils/hideTimeline.ts";
-import handleTimelineMove from "./utils/handleTimelineMove";
+import handleTimelineMove, {moveTimelineOnResize} from "./utils/handleTimelineMove";
+import "animate.css";
 
-export default function Timeline(props)
+
+export default function Timeline()
 {
     const query = useStaticQuery(graphql`
         query
@@ -54,6 +56,7 @@ export default function Timeline(props)
     useEffect(() => {
         manageEventStartAndEndPosition(frontmatterData.current);
         handleTimelineMove();
+        moveTimelineOnResize();
     }, []);
 
     return(

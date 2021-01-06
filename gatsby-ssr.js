@@ -48,7 +48,6 @@ const GlobalStyles = createGlobalStyle`
         background: ${props => props.theme.colors.mainYellow};
     }
 
-
 `;
 
 export const wrapRootElement = ({element}) => 
