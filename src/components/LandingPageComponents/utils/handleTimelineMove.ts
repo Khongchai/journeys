@@ -1,3 +1,5 @@
+import setBlackBackgroundHeight from "./setBlackBackgroundHeight";
+
 //DO NO TOUCH ANYTHING EVERYTHING HERE IS BAD; DECOUPLING REQUIRED.
 
 
@@ -99,7 +101,7 @@ function stop()
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-export function moveTimelineOnResize()
+export function adjustElementsSizeOnResize()
 {
     window.addEventListener("resize", ()=>
     {
@@ -110,7 +112,11 @@ export function moveTimelineOnResize()
         setTimeout(() => {
             timeline.style.transition = "";
         }, 250);
+
+        setBlackBackgroundHeight();
+
     });
+    
 }
 
 //This function deals with the left and right side of the timeline and locks the drag to only the beginning and the end.
@@ -119,7 +125,6 @@ function handleTimelineEdges()
 {
 
     let windowWidth: number = document.documentElement.clientWidth;
-
     let timelineData = {
         absLeft: timeline.getBoundingClientRect().left,
         absRight: timeline.getBoundingClientRect().right,

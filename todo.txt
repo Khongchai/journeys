@@ -8,7 +8,8 @@ if all is done, then you may move on to implementing the main timeline
 why do you have to double click the "a" to jump from section to section?
 try resetting the global z-index to 0
 
-Timeline move >> problem: find a way to let the user continue their scroll after they hit the threshold on the left and right. // fix the issue where timeline does not move at all
+
 
 Timeline indicator
 Timeline picture and description
+bring back timeline after user tapped on the "hide timeline" in window mode

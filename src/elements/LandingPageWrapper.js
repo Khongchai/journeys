@@ -59,8 +59,6 @@ export const TimelineWrapper = styled.div`
     {
         display: none;
     }
-
-    transition: flex .4s;
 `;
 
 export const EventsWrapper = styled.div`
@@ -75,7 +73,7 @@ export const EventsWrapper = styled.div`
     cursor: grab;
 
     transition: opacity .3s;
-    background-color: black;
+    background-color: ${props => props.theme.colors.mainBlack};
     color: ${props => props.theme.colors.mainBlack};
 
     span
@@ -120,6 +118,11 @@ export const EventsWrapper = styled.div`
         {
             user-select: none;
         }
+
+        @media ${props=>props.theme.breakpoints.mobileAndTablet}
+        {
+            font-size: 0.80rem !important;
+        }
    }
     h5
     {
@@ -153,4 +156,12 @@ export const HideTimeline = styled.div`
     }
 `;
 
-
+export const BlackBackground = styled.div`
+    background-color: ${props=>props.theme.colors.mainBlack};
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    z-index: ${zIndexPriority.BlackBackground};
+    pointer-events: none;
+    transition: height.4s;
+`;

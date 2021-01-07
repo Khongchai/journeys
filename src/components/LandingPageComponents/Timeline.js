@@ -1,9 +1,10 @@
-import {TimelineWrapper, YearIndicator, EventsWrapper, HideTimeline} from "../../elements";
+import {TimelineWrapper, YearIndicator, EventsWrapper, HideTimeline, BlackBackground} from "../../elements";
 import React, {useEffect, useRef, useState} from "react";
 import {useStaticQuery, graphql} from "gatsby";
 import changeStylesOnClick from "./utils/changeStylesOnClick.ts";
 import hideTimeline from "./utils/hideTimeline.ts";
-import handleTimelineMove, {moveTimelineOnResize} from "./utils/handleTimelineMove";
+import handleTimelineMove, {adjustElementsSizeOnResize} from "./utils/handleTimelineMove";
+import setBlackBackgroundHeight from "./utils/setBlackBackgroundHeight";
 import "animate.css";
 
 
@@ -51,17 +52,21 @@ export default function Timeline()
     `);
     //store this in useRef
     const frontmatterData = useRef(query.allMdx.edges.map(edge => edge.node.frontmatter));
-    const [toggle, setToggle] = useState(true);
+    const [hideNavBarToggle, setHideNavBarToggle] = useState(true);
 
-    useEffect(() => {
+    useEffect(() => 
+    {
         manageEventStartAndEndPosition(frontmatterData.current);
         handleTimelineMove();
-        moveTimelineOnResize();
+        setBlackBackgroundHeight();
+
+        adjustElementsSizeOnResize();
     }, []);
 
     return(
         <>
-            <HideTimeline onClick={(e) => hideTimeline(e.target, setToggle, toggle)} >Hide Timeline</HideTimeline>
+            <BlackBackground id="black-background"/>
+            <HideTimeline id="hide-timeline-text" onClick={()=>hideTimeline(setHideNavBarToggle, hideNavBarToggle)} >Hide Timeline</HideTimeline>
             <TimelineWrapper id="timeline-wrapper">
                 <YearIndicator>
                     {frontmatterData.current.map(data => 
