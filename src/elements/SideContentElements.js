@@ -46,6 +46,8 @@ export const ContentBarWrapper = styled.div`
         margin-top: 0.6rem;
         text-indent: 1rem;
         font-size: 0.8rem;
+        position: relative;
+        left: 1rem;
     }
 `;
 

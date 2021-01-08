@@ -10,3 +10,10 @@ a
 {
     transition: .2s;
 }
+
+.active-sub
+{
+    color: #540D6E !important;
+    transition: color .1s, left .2s !important;
+    left: 0px !important;
+}

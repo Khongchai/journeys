@@ -1,4 +1,3 @@
-
 export default function manageSubSections(sectionName: string, operation: string)
 {
     
@@ -19,8 +18,9 @@ export default function manageSubSections(sectionName: string, operation: string
             newSection.href = `#${subSections[i].innerHTML}`;
             subSections[i].id = subSections[i].innerHTML;
 
-            newSection.innerHTML = (`- ${subSections[i].innerHTML}`);
+            newSection.innerHTML = (`${subSections[i].innerHTML}`);
             sidebarSection.appendChild(newSection);
+
         }
     }
     else if (operation === "REMOVE" && haveChildrenAlready(sidebarSection))

@@ -1,5 +1,6 @@
 import React, {useState, useEffect, useRef} from "react";
-import checkIfInViewport from "./utils/checkIfInViewport";
+import {manageMainSectionsHighlight} from "./utils/viewPortVisibilityMonitor";
+import manageLineIndicator from "./utils/manageLineIndicator";
 
 export const SideContentBarContent = () =>
 {
@@ -15,12 +16,12 @@ export const SideContentBarContent = () =>
         setAllHeadingTexts(getTextFromHTMLAndSetID(allHeadingsHTMLElem.current));
         window.addEventListener("scroll", function() 
         {
-            //this condition prevents the function from running in pages that 
-            //do not have the side bar
+            //this condition prevents the function from running in pages that do not have the side bar
             if (pageWithSidebar.current)
             {
-                checkIfInViewport(allHeadingsHTMLElem.current)
+                manageMainSectionsHighlight(allHeadingsHTMLElem.current);
             }
+            manageLineIndicator();
         });
 
       },[]);
@@ -32,7 +33,7 @@ export const SideContentBarContent = () =>
                     {
                         //wait time should be a bit more than the transition time for runningline element
                         setTimeout(()=>{
-                            checkIfInViewport(allHeadingsHTMLElem.current);
+                            manageLineIndicator();
                         }, 170);
                         return true;
                     }   

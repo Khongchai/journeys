@@ -13,4 +13,5 @@ try resetting the global z-index to 0
 Timeline indicator
 Timeline picture and description <<<<< do description first, easier, then the picture
 bring back timeline after user tapped on the "hide timeline" in window mode
+Add subsection id for the rest of the subsection <<<<
 
