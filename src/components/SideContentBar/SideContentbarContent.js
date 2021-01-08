@@ -13,21 +13,29 @@ export const SideContentBarContent = () =>
     {
         allHeadingsHTMLElem.current = document.getElementsByTagName("h1");
         setAllHeadingTexts(getTextFromHTMLAndSetID(allHeadingsHTMLElem.current));
-        window.addEventListener("scroll", function viewPortCheck(){
+        window.addEventListener("scroll", function() 
+        {
+            //this condition prevents the function from running in pages that 
+            //do not have the side bar
             if (pageWithSidebar.current)
             {
                 checkIfInViewport(allHeadingsHTMLElem.current)
             }
         });
+
       },[]);
 
     return(
         <>
             {allHeadingTexts.map(heading => (
-                <a href={`#${heading}`} onClick={() => {
-                    checkIfInViewport(allHeadingsHTMLElem.current);
-                    return true;
-                    }
+                <a href={`#${heading}`} onClick={(e) => 
+                    {
+                        //wait time should be a bit more than the transition time for runningline element
+                        setTimeout(()=>{
+                            checkIfInViewport(allHeadingsHTMLElem.current);
+                        }, 170);
+                        return true;
+                    }   
                 } id={`sidebar${heading}`} className="sidebar-sections" key={heading}>{heading}</a>
             ))}
         </>

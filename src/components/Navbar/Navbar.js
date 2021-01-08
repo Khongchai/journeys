@@ -71,7 +71,7 @@ export const Navbar = () =>
                     </NavItem>
 
                     <NavItem className="nav-item">
-                        <NavLink to="/method">
+                        <NavLink to="/analysis">
                             <AnalysisIcon/>
                             <LinkText className="link-text">
                                 {analysisText}    

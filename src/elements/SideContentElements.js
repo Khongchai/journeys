@@ -56,6 +56,6 @@ export const RunningLine = styled.span`
     width: 0.3rem;
     background-color: ${props => props.theme.colors.mainMagenta};
     top: -20px;
-    transition: .05s;
+    transition: top .15s ease-out, height .05s;
     border-radius: 3px;
 `;

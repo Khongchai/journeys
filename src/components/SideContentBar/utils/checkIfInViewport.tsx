@@ -28,4 +28,5 @@ export default function checkIfInViewPort(elems: HTMLCollectionOf<Element>)
             sidebarSection.classList.remove("active");
         }
     }
+
 }
