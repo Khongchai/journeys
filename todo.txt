@@ -18,4 +18,5 @@ Timeline picture and description:
 To load images dynamically, try looking into Gatsby Test project and see how it's done.
 In there, all images are located with the related mdx file, so try that.
 Make sure you can scroll the subsection when it overflows
+take care of responsive design for main page
 
