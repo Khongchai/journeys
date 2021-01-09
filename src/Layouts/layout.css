@@ -2,13 +2,13 @@
 {
     /*style this later*/
     color: #540D6E !important;
-    font-size: 25px !important;
+    font-size: 20px !important;
     font-weight:bold !important;
 }
 
 a
 {
-    transition: .2s;
+    transition: .3s;
 }
 
 .active-sub

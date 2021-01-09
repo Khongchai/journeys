@@ -7,8 +7,6 @@ export const SideContentBarContent = () =>
     const [allHeadingTexts, setAllHeadingTexts] = useState([]);
     const allHeadingsHTMLElem = useRef(null);
 
-    //this variable prevents the scroll listener from running in pages without this sidebar
-    const pageWithSidebar = useRef(true);
 
     useEffect(() => 
     {
@@ -16,14 +14,13 @@ export const SideContentBarContent = () =>
         setAllHeadingTexts(getTextFromHTMLAndSetID(allHeadingsHTMLElem.current));
         window.addEventListener("scroll", function() 
         {
-            //this condition prevents the function from running in pages that do not have the side bar
-            if (pageWithSidebar.current)
+            //only run when thre is a side bar
+            if (document.getElementById("line-indicator"))
             {
                 manageMainSectionsHighlight(allHeadingsHTMLElem.current);
+                manageLineIndicator();
             }
-            manageLineIndicator();
         });
-
       },[]);
 
     return(

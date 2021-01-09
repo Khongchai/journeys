@@ -1,4 +1,4 @@
-import theme from "../../../themes/theme";
+import theme from "../../../../themes/theme";
 
 var activeElem: HTMLElement;
 

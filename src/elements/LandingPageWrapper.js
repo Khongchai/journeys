@@ -14,29 +14,41 @@ export const LandingPageWrapper = styled.div`
     }
 `;
 
-export const Overview = styled.div`
+export const OverviewWrapper = styled.div`
     display: flex;
     width: 100%;
     flex: 2;
+    padding-top: 6.5rem;
+    padding-right: 5rem;
     @media ${props => props.theme.breakpoints.mobileAndTablet}
     {
         flex-direction: column;
     }
 `;  
 
-export const OverviewPictureView = styled.div`
+export const OverviewPictureViewWrapper = styled.div`
     flex: 2 1;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    display: flex;
+    /* header-5 1 */
+    border-radius: 270.5px;
+
 `;
 
-export const OverviewDescription = styled.div`
+export const OverviewDescriptionWrapper = styled.div`
     flex: 1.3 0.65;
+    display: flex;
+    flex-direction: column;
+    a
+    {
+        color: ${props=>props.theme.colors.mainMagenta};
+    }
 `;
 
 
 export const TimelineWrapper = styled.div`
-    flex: 0.8;
+    flex: 0.95;
     display: flex;
     flex-direction: column;
     min-width: 1100px;
