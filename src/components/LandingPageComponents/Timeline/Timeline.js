@@ -22,16 +22,28 @@ export default function Timeline(props)
                         {
                             featureImageI
                             {
-                                id
+                                childImageSharp {
+                                  fluid {
+                                   ...GatsbyImageSharpFluid_tracedSVG
+                                  }
+                                }
                             }
                             featureImageII
                             {
-                                id
+                                childImageSharp {
+                                  fluid {
+                                    ...GatsbyImageSharpFluid_tracedSVG
+                                  }
+                                }
                             }
                             featureImageIII
                             {
                                 
-                                id
+                                childImageSharp {
+                                  fluid {
+                                    ...GatsbyImageSharpFluid_tracedSVG
+                                  }
+                                }
                             }
                             year
                             slug
@@ -75,9 +87,9 @@ export default function Timeline(props)
         adjustElementsSizeOnResize();
     }, []);
 
-    function setOverviewData(year, topic, excerpt, pictureID)
+    function setOverviewData(year, topic, excerpt, picture)
     {
-        props.setRequestedOverviewData({year, topic, excerpt, pictureID});
+        props.setRequestedOverviewData({year, topic, excerpt, picture});
     }
 
     return(
@@ -94,21 +106,27 @@ export default function Timeline(props)
                 </YearIndicator>
                 <EventsWrapper id="events-wrapper">
                     {frontmatterData.current.map(data => {
-                        //check null for featureImage using ternary
+                        //check null for featureImage using ternary or maybe not pass id, just pass the image
                         return(
                             <>
-                                <span key={data.topic1} className="event" onClick={()=>setOverviewData(data.year, data.topic1, data.topic1excerpt, data.featureImageI.id)}>
+                                <span key={data.topic1} className="event" onClick={()=>setOverviewData(data.year, data.topic1, 
+                                data.topic1excerpt, data.featureImageI? 
+                                data.featureImageI.childImageSharp.fluid: null)}>
                                     <p>{data.topic1}</p>
                                 </span>
                                 {
                                 !data.topic2? <span className="event empty-placeholder" style={{display: "none"}}></span>:
-                                    <span key={data.topic2} onClick={()=>setOverviewData(data.year, data.topic2, data.topic2excerpt, data.featureImageII.id)} className="event">
+                                    <span key={data.topic2} 
+                                    onClick={()=>setOverviewData(data.year, data.topic2, 
+                                    data.topic2excerpt, data.featureImageII? data.featureImageII.childImageSharp.fluid: null
+                                    )} className="event">
                                         <p>{data.topic2}</p>
                                     </span>
                                 }
                                 {
                                 !data.topic3? <span className="event empty-placeholder" style={{display: "none"}}></span>:
-                                    <span key={data.topic3} onClick={()=>setOverviewData(data.year, data.topic3, data.topic3excerpt, data.featureImageIII.id)} className="event">
+                                    <span key={data.topic3} onClick={()=>setOverviewData(data.year, data.topic3, data.topic3excerpt, 
+                                    data.featureImageIII? data.featureImageIII.childImageSharp.fluid: null)} className="event">
                                         <p>{data.topic3}</p>
                                     </span>
                                 }

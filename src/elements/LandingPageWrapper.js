@@ -32,7 +32,6 @@ export const OverviewPictureViewWrapper = styled.div`
     align-items: center;
     display: flex;
     /* header-5 1 */
-    border-radius: 270.5px;
 
 `;
 
