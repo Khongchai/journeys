@@ -1,0 +1,1 @@
+{"errors":[{"message":"Variable \"$pictureID\" of required type \"String!\" was not provided.","locations":[{"line":9,"column":15}]}]}
