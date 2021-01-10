@@ -1,5 +1,6 @@
 export interface OverviewDataRequest{
     year: number,
     topic: string,
-    excerpt: string
+    excerpt: string,
+    pictureID: string,
 }

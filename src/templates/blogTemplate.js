@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useRef} from "react";
 import { graphql } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { Content, SideContentBar, Footer, DynamicPagesContainer } from "../components";

@@ -3,12 +3,12 @@
     /*style this later*/
     color: #540D6E !important;
     font-size: 20px !important;
-    font-weight:bold !important;
+    font-weight: 800 !important;
 }
 
 a
 {
-    transition: .3s;
+    transition: .1s;
 }
 
 .active-sub

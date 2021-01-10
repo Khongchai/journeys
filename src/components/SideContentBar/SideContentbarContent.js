@@ -7,20 +7,24 @@ export const SideContentBarContent = () =>
     const [allHeadingTexts, setAllHeadingTexts] = useState([]);
     const allHeadingsHTMLElem = useRef(null);
 
-
     useEffect(() => 
     {
         allHeadingsHTMLElem.current = document.getElementsByTagName("h1");
         setAllHeadingTexts(getTextFromHTMLAndSetID(allHeadingsHTMLElem.current));
-        window.addEventListener("scroll", function() 
+        const manageEventListener = function()
         {
             //only run when thre is a side bar
             if (document.getElementById("line-indicator"))
             {
                 manageMainSectionsHighlight(allHeadingsHTMLElem.current);
                 manageLineIndicator();
-            }
-        });
+            } 
+        }
+        window.addEventListener("scroll", manageEventListener);
+
+        return () => {
+            window.removeEventListener("scroll", manageEventListener);
+        }
       },[]);
 
     return(

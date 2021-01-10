@@ -20,6 +20,19 @@ export default function Timeline(props)
                     {
                         frontmatter 
                         {
+                            featureImageI
+                            {
+                                id
+                            }
+                            featureImageII
+                            {
+                                id
+                            }
+                            featureImageIII
+                            {
+                                
+                                id
+                            }
                             year
                             slug
                             topic1
@@ -62,9 +75,9 @@ export default function Timeline(props)
         adjustElementsSizeOnResize();
     }, []);
 
-    function setOverviewData(year, topic, excerpt)
+    function setOverviewData(year, topic, excerpt, pictureID)
     {
-        props.setRequestedOverviewData({year, topic, excerpt});
+        props.setRequestedOverviewData({year, topic, excerpt, pictureID});
     }
 
     return(
@@ -81,20 +94,21 @@ export default function Timeline(props)
                 </YearIndicator>
                 <EventsWrapper id="events-wrapper">
                     {frontmatterData.current.map(data => {
+                        //check null for featureImage using ternary
                         return(
                             <>
-                                <span key={data.topic1} className="event" onClick={()=>setOverviewData(data.year, data.topic1, data.topic1excerpt)}>
+                                <span key={data.topic1} className="event" onClick={()=>setOverviewData(data.year, data.topic1, data.topic1excerpt, data.featureImageI.id)}>
                                     <p>{data.topic1}</p>
                                 </span>
                                 {
                                 !data.topic2? <span className="event empty-placeholder" style={{display: "none"}}></span>:
-                                    <span key={data.topic2} onClick={()=>setOverviewData(data.year, data.topic2, data.topic2excerpt)} className="event">
+                                    <span key={data.topic2} onClick={()=>setOverviewData(data.year, data.topic2, data.topic2excerpt, data.featureImageII.id)} className="event">
                                         <p>{data.topic2}</p>
                                     </span>
                                 }
                                 {
                                 !data.topic3? <span className="event empty-placeholder" style={{display: "none"}}></span>:
-                                    <span key={data.topic3} onClick={()=>setOverviewData(data.year, data.topic3, data.topic3excerpt)} className="event">
+                                    <span key={data.topic3} onClick={()=>setOverviewData(data.year, data.topic3, data.topic3excerpt, data.featureImageIII.id)} className="event">
                                         <p>{data.topic3}</p>
                                     </span>
                                 }

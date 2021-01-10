@@ -5,9 +5,12 @@ import OverviewPictureView from "./OverviewPictureView";
 
 export default function Overview(props: any)
 {
+    const variables = {
+        pictureID: props.requestedOverviewData.pictureID
+    };
     return(
         <OverviewWrapper>
-            <OverviewPictureView requestedOverviewData={props.requestedOverviewData}/>
+            <OverviewPictureView requestedOverviewData={props.requestedOverviewData} variables={variables}/>
             <OverviewDescription requestedOverviewData={props.requestedOverviewData} />
         </OverviewWrapper>
     )

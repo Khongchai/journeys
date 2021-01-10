@@ -27,7 +27,10 @@ export default function OverviewDescription(props: any)
     {
         setTimeout(()=>{
             let yearElem = document.getElementById(`sidebar${year}`);
-            yearElem.click();
+            if (yearElem)
+            {
+                yearElem.click();
+            }
         }, 600);
     }
     return(
@@ -39,7 +42,6 @@ export default function OverviewDescription(props: any)
                 <Link style={{marginTop: "5rem"}} to={`/biography`} onClick={()=>{clickYear(overviewData.year)}}>
                     Read more
                 </Link>
-
             </OverviewDescriptionWrapper>
     )
 }
