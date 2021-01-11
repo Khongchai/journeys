@@ -19,7 +19,7 @@ export const LandingPageWrapper = styled.div`
 export const OverviewWrapper = styled.div`
     display: flex;
     width: 100%;
-    flex: 2;
+    flex: 1.6;
     padding-top: 9rem;
     padding-right: 5rem;
     padding-left: 5rem;
@@ -54,7 +54,6 @@ export const StyledGatsbyImg = styled(props => <Img {...props}/>)`
     {
         max-height: 130px;
     }
-
 `;
 
 

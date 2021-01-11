@@ -13,5 +13,10 @@ Timeline picture and description:
 
 1. Take care of loading images >> the images now work, but think about the resolution: maybe used fixed? or maybe look again at how css pictures shoudl behave
 2. Responsive design for the main page
-3. Set media query of the timeline to be different from other pages.
+3. Continue working on media query
+4. Crop images
+5. Bring in info for other pages: now you will have to take care of including an image into the file.
+6. Work on Analysis
+
+
 
