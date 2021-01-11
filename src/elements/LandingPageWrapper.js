@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import zIndexPriority from "../themes/z-indexPriority";
+import React from "react";
+import Img from "gatsby-image";
 
 export const LandingPageWrapper = styled.div`
     overflow-x: hidden;
@@ -18,10 +20,14 @@ export const OverviewWrapper = styled.div`
     display: flex;
     width: 100%;
     flex: 2;
-    padding-top: 6.5rem;
+    padding-top: 9rem;
     padding-right: 5rem;
-    @media ${props => props.theme.breakpoints.mobileAndTablet}
+    padding-left: 5rem;
+    @media ${props => props.theme.breakpoints.tablet}
     {
+        padding-top: 2rem !important;
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
         flex-direction: column;
     }
 `;  
@@ -31,9 +37,26 @@ export const OverviewPictureViewWrapper = styled.div`
     flex-direction: column;
     align-items: center;
     display: flex;
-    /* header-5 1 */
+    @media ${props => props.theme.breakpoints.tablet}
+    {
+        justify-content: center;
+    }
+`;
+
+export const StyledGatsbyImg = styled(props => <Img {...props}/>)`
+    border-radius: 270px; 
+    max-width: 600px; 
+    max-height: 300px; 
+    flex: 0.5; 
+    overflow: hidden; 
+    object-fit: cover;
+    @media ${props => props.theme.breakpoints.mobileAndTablet}
+    {
+        max-height: 130px;
+    }
 
 `;
+
 
 export const OverviewDescriptionWrapper = styled.div`
     flex: 1.3 0.65;
@@ -41,13 +64,15 @@ export const OverviewDescriptionWrapper = styled.div`
     flex-direction: column;
     a
     {
+        margin-bottom: 1rem;
+        margin-top: 1rem;
         color: ${props=>props.theme.colors.mainMagenta};
     }
 `;
 
 
 export const TimelineWrapper = styled.div`
-    flex: 0.95;
+    flex: 1;
     display: flex;
     flex-direction: column;
     min-width: 1100px;
@@ -157,7 +182,7 @@ export const HideTimeline = styled.div`
     right: 5px;
     bottom: 5.2rem;
     z-index: ${zIndexPriority.hideTimelineText};
-    color: ${props=>props.theme.colors.mainMagenta};
+    color: ${props=>props.theme.colors.mainYellow};
     cursor: pointer;
 
     display: none;

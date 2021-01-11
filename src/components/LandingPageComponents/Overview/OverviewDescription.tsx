@@ -39,7 +39,7 @@ export default function OverviewDescription(props: any)
                 <p style={{ textIndent: "2rem", marginTop: "2rem"}}>
                     {overviewData.excerpt}
                 </p>
-                <Link style={{marginTop: "5rem"}} to={`/biography`} onClick={()=>{clickYear(overviewData.year)}}>
+                <Link to={`/biography`} onClick={()=>{clickYear(overviewData.year)}}>
                     Read more
                 </Link>
             </OverviewDescriptionWrapper>

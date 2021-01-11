@@ -18,6 +18,7 @@ export default
     {
         mobileAndTablet: "only screen and (max-width: 600px)",
         largeDevices: "only screen and (min-width: 600px)",
+        tablet: "only screen and (max-width: 1000px)",
     },
     spacings:
     {
