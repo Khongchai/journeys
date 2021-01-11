@@ -1,4 +1,5 @@
 import setBlackBackgroundHeight from "./setBlackBackgroundHeight";
+import calculateThrottleValueLimit, {clearBeginVal} from "./calculateThrottleValueLimit/calculateThrottleValueLimit";
 
 //DO NO TOUCH ANYTHING EVERYTHING HERE IS BAD; DECOUPLING REQUIRED.
 
@@ -21,14 +22,15 @@ function getResetValuesIfAny(): number
 {
     let windowWidth: number = document.documentElement.clientWidth;
     let navBarWidth: number = getNavbarWidthIfInWindowMode(windowWidth);
+    let extraOffset: number = 1;
     let resetVal: number;
     if (currentDragDirection === "right")
     {
-        resetVal = navBarWidth - timeline.offsetLeft;
+        resetVal = (navBarWidth - timeline.offsetLeft) - extraOffset;
     }
     else if (currentDragDirection === "left")
     {
-        resetVal =  timeline.offsetLeft - navBarWidth;
+        resetVal =  (timeline.offsetLeft - navBarWidth) + extraOffset;
     }
     else
     {
@@ -97,6 +99,7 @@ function stop()
     timeline.removeEventListener("mousemove", move);
     timeline.removeEventListener("mouseleave", stop);
     throttleNumber = null;
+    clearBeginVal();
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -141,14 +144,18 @@ function handleTimelineEdges()
             //user drags to the right.
             if (prevDrag < dragAmount)
             {
+                
                 currentDragDirection = currentDragDirection? currentDragDirection: "right";
-                throttleNumber = throttleNumber + 0.2;
+                //throttleNumber = throttleNumber + 0.2;
+                throttleNumber = throttleNumber + calculateThrottleValueLimit(throttleNumber);
+                
             }
             //user drags to the left.
-            else
+            else if (dragAmount < prevDrag)
             {
                 currentDragDirection = currentDragDirection? currentDragDirection: "left";
-                throttleNumber = throttleNumber - 0.2;
+                //throttleNumber = throttleNumber + 0.2;
+                throttleNumber = throttleNumber - calculateThrottleValueLimit(throttleNumber);
             } 
         }
         else
@@ -156,7 +163,7 @@ function handleTimelineEdges()
             throttleNumber = dragAmount;
         }        
         prevDrag = dragAmount;
-        
+
         return throttleNumber;
     }
     return dragAmount;

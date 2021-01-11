@@ -11,6 +11,7 @@ refactor all the code
 bring back timeline after user tapped on the "hide timeline" in window mode
 Timeline picture and description:
 
-1. Take care of loading images >> add images to everything, organize them into their own folders, then pass the id of the image to the required component
-2. Responsive design for main page
+1. Take care of loading images >> the images now work, but think about the resolution: maybe used fixed? or maybe look again at how css pictures shoudl behave
+2. Responsive design for the main page
+3. Set media query of the timeline to be different from other pages.
 
