@@ -1,10 +1,8 @@
 import setBlackBackgroundHeight from "./setBlackBackgroundHeight";
 import calculateThrottleValueLimit, {clearBeginVal} from "./calculateThrottleValueLimit/calculateThrottleValueLimit";
 
-//DO NO TOUCH ANYTHING EVERYTHING HERE IS BAD; DECOUPLING REQUIRED.
+//TODO refactor to a class
 
-
-//to move timeline, adjust dragamount, reset all values and call moveTimeline()
 var offsetX: number = 0;
 var initialX: number = 0;
 var dragAmount: number = 0; 
@@ -22,7 +20,7 @@ function getResetValuesIfAny(): number
 {
     let windowWidth: number = document.documentElement.clientWidth;
     let navBarWidth: number = getNavbarWidthIfInWindowMode(windowWidth);
-    let extraOffset: number = 1;
+    let extraOffset: number = 0.5;
     let resetVal: number;
     if (currentDragDirection === "right")
     {
@@ -36,6 +34,7 @@ function getResetValuesIfAny(): number
     {
         resetVal = dragAmount;
     }
+
     offsetX = resetVal;
     initialX = resetVal;
     dragAmount = resetVal;
@@ -84,13 +83,16 @@ function stop()
     if (throttleNumber)
     {
         offsetX = throttleNumber;
-        let resetValue = getResetValuesIfAny();
-        timeline.style.transform = `translate3d(${resetValue}px, 0, 0)`;
-        timeline.style.transition = "transform .1s";
-        setTimeout(()=>
+        if (currentDragDirection)
         {
-            timeline.style.transition = "";
-        }, 100);
+            let resetValue = getResetValuesIfAny();
+            timeline.style.transform = `translate3d(${resetValue}px, 0, 0)`;
+            timeline.style.transition = "transform .1s";
+            setTimeout(()=>
+            {
+                timeline.style.transition = "";
+            }, 100);
+        }
     }
     else
     {
@@ -126,7 +128,6 @@ export function adjustElementsSizeOnResize()
 var prevDrag: number = null;
 function handleTimelineEdges()
 {
-
     let windowWidth: number = document.documentElement.clientWidth;
     let timelineData = {
         absLeft: timeline.getBoundingClientRect().left,
@@ -144,26 +145,24 @@ function handleTimelineEdges()
             //user drags to the right.
             if (prevDrag < dragAmount)
             {
-                
-                currentDragDirection = currentDragDirection? currentDragDirection: "right";
-                //throttleNumber = throttleNumber + 0.2;
+                //currentDragDirection = currentDragDirection? currentDragDirection: "right";
                 throttleNumber = throttleNumber + calculateThrottleValueLimit(throttleNumber);
                 
             }
             //user drags to the left.
             else if (dragAmount < prevDrag)
             {
-                currentDragDirection = currentDragDirection? currentDragDirection: "left";
-                //throttleNumber = throttleNumber + 0.2;
+                //currentDragDirection = currentDragDirection? currentDragDirection: "left";
                 throttleNumber = throttleNumber - calculateThrottleValueLimit(throttleNumber);
             } 
+            //NaN happens when user drags back in 
         }
         else
         {
             throttleNumber = dragAmount;
         }        
         prevDrag = dragAmount;
-
+        
         return throttleNumber;
     }
     return dragAmount;
@@ -191,6 +190,17 @@ function edgeVisible(leftBorder: number, rightBorder: number, elemData: {absLeft
         return true;
     }
     return false;
+}
+
+export function cancelDragDirectionAndThrottleNumber()
+{
+    currentDragDirection = null;
+    throttleNumber = null;
+}
+
+export function setCurrentDragDirection(direction: string)
+{
+    currentDragDirection = direction;
 }
 
 

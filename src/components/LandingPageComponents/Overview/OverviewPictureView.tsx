@@ -8,7 +8,8 @@ import {useStaticQuery, graphql} from "gatsby";
 export default function OverviewPictureView(props: any)
 {
 
-        const data = useStaticQuery(graphql`
+    //change Diary file to the other one
+    const data = useStaticQuery(graphql`
         query Myquery
         {
             file(relativePath: {eq: "landingPageImages/Diary.png"}) 
@@ -22,13 +23,13 @@ export default function OverviewPictureView(props: any)
                 }
             }
         }
-    `);
+`   );
     
     const picture: any = props.requestedOverviewData? props.requestedOverviewData.picture: data.file.childImageSharp.fluid; 
     return(
         <OverviewPictureViewWrapper>
-            <div style={{width: "80%", maxWidth: "600px", maxHeight: "333px", flex: "0.5"}}>
-                <Img fluid={picture}style={{borderRadius: "270px"}}/>
+            <div style={{width: "80%" }}>
+                <Img fluid={picture}style={{borderRadius: "270px", maxWidth: "600px", maxHeight: "333px", flex: "0.5", overflow: "hidden"}}/>
             </div>
         </OverviewPictureViewWrapper>
     )

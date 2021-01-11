@@ -74,7 +74,7 @@ export const TimelineWrapper = styled.div`
 
 export const EventsWrapper = styled.div`
     width: 100%;
-    flex: 1 ;
+    flex: 1;
     display: grid;
     grid-template-columns: repeat(108, minmax(1px, 1fr));
     grid-template-rows: 0.23fr 0.23fr 0.23fr 0.23fr ;
@@ -98,7 +98,7 @@ export const EventsWrapper = styled.div`
         overflow: hidden;
         margin-left: 0.09rem;
         margin-right: 0.09rem;
-        min-width: 3rem;
+        min-width: 2.2rem;
         border-radius: 2px;
         ::-webkit-scrollbar
         {
