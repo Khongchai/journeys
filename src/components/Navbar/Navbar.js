@@ -80,7 +80,7 @@ export const Navbar = () =>
                     </NavItem>
 
                     <NavItem className="nav-item">
-                        <NavLink to="credit">
+                        <NavLink to="/credit">
                             <CreditIcon/>
                             <LinkText className="link-text">
                                 {creditText}

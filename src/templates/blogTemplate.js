@@ -8,9 +8,7 @@ const DynamicBlog = ({data}) =>
 {
     return(
         <DynamicPagesContainer id="dynamic-page-container">
-        <SEO 
-            title={data.mdx.frontmatter.title}
-        />
+        <SEO title={data.mdx.frontmatter.title}/>
             <Content>
             <div>
                 <MDXRenderer>

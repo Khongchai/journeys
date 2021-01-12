@@ -6,3 +6,4 @@ export * from "./ContentElements";
 export * from "./DynamicPagesContainerElements";
 export * from "./FooterElements";
 export * from "./SideContentElements";
+export * from "./CreditPageElements";

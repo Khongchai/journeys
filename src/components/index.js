@@ -6,3 +6,4 @@ export * from "./Footer";
 export * from  "./SideContentBar/SideContentBar";
 export * from "./SideContentBar/SideContentbarContent";
 export * from "./Seo";
+export * from "./CreditPage";

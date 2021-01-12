@@ -23,7 +23,8 @@ export default function Timeline(props)
                             featureImageI
                             {
                                 childImageSharp {
-                                  fluid {
+                                  fluid 
+                                  {
                                    ...GatsbyImageSharpFluid_tracedSVG
                                   }
                                 }
