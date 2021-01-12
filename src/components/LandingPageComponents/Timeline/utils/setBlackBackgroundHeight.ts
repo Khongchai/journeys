@@ -7,11 +7,12 @@ export default function setBlackBackgroundHeight()
         let blackBackground: HTMLElement = document.getElementById("black-background");
         let windowWidth: number = document.documentElement.clientWidth;
         let currentBreakpoints: number = 600;
+        let extraHeight: number = 5;
     
         if (windowWidth < currentBreakpoints)
         {
             let navbarHeight = parseInt(window.getComputedStyle(document.getElementById("navbar-wrapper")).getPropertyValue("height"));
-            blackBackground.style.height = `${parseInt(eventsComputedStyle.getPropertyValue("height")) + navbarHeight}px`;
+            blackBackground.style.height = `${parseInt(eventsComputedStyle.getPropertyValue("height")) + navbarHeight + extraHeight}px`;
         }
         else
         {

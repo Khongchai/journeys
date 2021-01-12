@@ -20,7 +20,7 @@ function getResetValuesIfAny(): number
 {
     let windowWidth: number = document.documentElement.clientWidth;
     let navBarWidth: number = getNavbarWidthIfInWindowMode(windowWidth);
-    let extraOffset: number = 0.5;
+    let extraOffset: number = 0.1;
     let resetVal: number;
     if (currentDragDirection === "right")
     {

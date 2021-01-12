@@ -21,8 +21,8 @@ export const OverviewWrapper = styled.div`
     width: 100%;
     flex: 1.6;
     padding-top: 9rem;
-    padding-right: 5rem;
-    padding-left: 5rem;
+    padding-right: 7rem;
+    padding-left: 5.5rem;
     @media ${props => props.theme.breakpoints.tablet}
     {
         padding-top: 2rem !important;
@@ -108,7 +108,6 @@ export const EventsWrapper = styled.div`
     cursor: grab;
 
     transition: opacity .3s;
-    background-color: ${props => props.theme.colors.mainBlack};
     color: ${props => props.theme.colors.mainBlack};
 
     span
