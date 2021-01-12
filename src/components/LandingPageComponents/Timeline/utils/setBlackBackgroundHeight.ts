@@ -7,7 +7,7 @@ export default function setBlackBackgroundHeight()
         let blackBackground: HTMLElement = document.getElementById("black-background");
         let windowWidth: number = document.documentElement.clientWidth;
         let currentBreakpoints: number = 600;
-        let extraHeight: number = 5;
+        let extraHeight: number = 2;
     
         if (windowWidth < currentBreakpoints)
         {

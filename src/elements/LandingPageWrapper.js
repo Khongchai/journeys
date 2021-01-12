@@ -67,6 +67,19 @@ export const OverviewDescriptionWrapper = styled.div`
         margin-top: 1rem;
         color: ${props=>props.theme.colors.mainMagenta};
     }
+    @media ${props => props.theme.breakpoints.mobileAndTablet}
+    {
+        p
+        {
+            font-size: 0.8rem;
+        }
+
+        h1
+        {
+            margin-top: 1rem;
+            font-size: medium;
+        }
+    }
 `;
 
 
@@ -198,4 +211,8 @@ export const BlackBackground = styled.div`
     z-index: ${zIndexPriority.BlackBackground};
     pointer-events: none;
     transition: height.4s;
+    @media ${props=>props.theme.breakpoints.mobileAndTablet}
+    {
+        display: absolute !important;
+    }
 `;

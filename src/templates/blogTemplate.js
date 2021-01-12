@@ -1,12 +1,16 @@
-import React, {useRef} from "react";
+import React from "react";
 import { graphql } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
-import { Content, SideContentBar, Footer, DynamicPagesContainer } from "../components";
+import { Content, SideContentBar, Footer, DynamicPagesContainer} from "../components";
+import SEO from "../components/Seo";
 
 const DynamicBlog = ({data}) =>
 {
     return(
         <DynamicPagesContainer id="dynamic-page-container">
+        <SEO 
+            title={data.mdx.frontmatter.title}
+        />
             <Content>
             <div>
                 <MDXRenderer>

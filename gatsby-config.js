@@ -6,6 +6,8 @@ module.exports = {
     title: "Journeys",
     description: "Khongchai's 2021 Graduate Recital",
     author: "Khongchai",
+    url: "khongchai.github.io/journeys",
+    image: "images/tchaikovsky-for-helmet.jpg",
   },
   
   plugins: 
@@ -47,6 +49,12 @@ module.exports = {
       }
     },
     `gatsby-plugin-sharp`, 
+    {
+      resolve: `gatsby-plugin-offline`,
+      options: {
+        precachePages: [`/*`],
+      },
+    },
     `gatsby-plugin-layout`,
     `gatsby-transformer-sharp`,
     {
@@ -62,5 +70,6 @@ module.exports = {
         ],
       },
     },
+    `gatsby-plugin-react-helmet`,
   ],
 }

@@ -48,6 +48,23 @@ const GlobalStyles = createGlobalStyle`
         background: ${props => props.theme.colors.mainYellow};
     }
 
+    ::-moz-selection 
+    { /* Code for Firefox */
+        color: ${props => props.theme.colors.mainWhite};
+        background: ${props => props.theme.colors.mainMagenta};
+    }
+
+    ::selection 
+    {
+        color: ${props => props.theme.colors.mainWhite};
+        background: ${props => props.theme.colors.mainMagenta};
+    }
+
+    html
+    {
+        scroll-behavior:  smooth;
+    }
+
 
 `;
 

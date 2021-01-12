@@ -173,8 +173,6 @@ export const ContentWrapper = styled.main`
         padding: 0.5rem;
     }
 
-
-
     @media ${props => props.theme.breakpoints.mobileAndTablet}
     {
         grid-column: 2 / span 6;

@@ -1,3 +1,8 @@
+
+/*
+This file is for targeting evasive stuff like gatsby-resp-image-wrapper and some other elements difficult to target directly.
+*/
+
 .active
 {
     /*style this later*/
@@ -18,14 +23,14 @@ a
     left: 0px !important;
 }
 
-/*
-Img
+.gatsby-resp-image-wrapper
 {
-    border-radius: "270px"; 
-    max-width: "600px"; 
-    max-height: "230px"; 
-    flex: "0.5"; 
-    overflow: "hidden"; 
-    object-fit: "cover";
+    transition: box-shadow .3s;
+    margin: 1rem;
 }
-*/
+
+.gatsby-resp-image-wrapper:hover
+{
+    box-shadow: rgba(46, 41, 51, 0.08) 0px 4px 16px, rgba(71, 63, 79, 0.16) 0px 8px 24px;
+}
+

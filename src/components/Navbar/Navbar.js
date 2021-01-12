@@ -62,7 +62,7 @@ export const Navbar = () =>
                     </NavItem>
 
                     <NavItem className="nav-item">
-                        <NavLink to="/researh">
+                        <NavLink to="/approach">
                             <ResearchIcon/>
                             <LinkText className="link-text">
                                 {approachText}                            

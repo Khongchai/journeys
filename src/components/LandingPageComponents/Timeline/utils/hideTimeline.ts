@@ -1,24 +1,27 @@
 import setBlackBackgroundHeight from "./setBlackBackgroundHeight";
 
+let navbarHeight: number; 
+
 export default function hideTimeline(setToggle: Function, toggle: boolean)
 {
     let text: HTMLElement = document.getElementById("hide-timeline-text");
     let timelineWrapper: HTMLElement = document.getElementById("timeline-wrapper");
     let blackBackground: HTMLElement = document.getElementById("black-background");
-    let transitionVal: string = ".4s";
+    let transitionVal: number = 2;
+
 
     //wait time should correspond to the transition value
-    let waitTime: number = 400;
+    let waitTime: number = 200;
 
     if (toggle)
     {
         text.innerHTML = "Show Timeline";
 
         timelineWrapper.style.flex = "0";
-        timelineWrapper.style.transition = `flex ${transitionVal}`;
+        timelineWrapper.style.transition = `flex .${transitionVal}s`;
 
         blackBackground.style.height = "0";
-        blackBackground.style.transition = `height ${transitionVal}`;
+        blackBackground.style.transition = `height .${transitionVal}s`;
 
         setToggle(false);   
     }
