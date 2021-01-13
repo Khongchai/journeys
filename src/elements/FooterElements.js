@@ -15,6 +15,7 @@ export const FooterWrapper = styled.footer`
 export const FooterIconsWrapper = styled.div`
     display: flex;
     flex: 0 0 100%;
+    filter: grayscale(100%);
     justify-content: center;
     align-items: center;
     a
@@ -23,11 +24,18 @@ export const FooterIconsWrapper = styled.div`
         opacity: 0.3;
         margin: 0 auto;
         height: 22px;
+        width: 22px;
         background-clip: border-box;
         :hover
         {
             opacity: 1;
         }
+        img
+        {
+            width: 22px;
+            border-radius: 50%;
+        }
+        
         
     }
 
