@@ -40,6 +40,7 @@ export const OverviewPictureViewWrapper = styled.div`
     @media ${props => props.theme.breakpoints.tablet}
     {
         justify-content: center;
+        flex: 1;
     }
 `;
 
@@ -65,6 +66,7 @@ export const OverviewDescriptionWrapper = styled.div`
     {
         margin-bottom: 1rem;
         margin-top: 1rem;
+        font-size: 0.785rem;
         color: ${props=>props.theme.colors.mainMagenta};
     }
     @media ${props => props.theme.breakpoints.mobileAndTablet}
@@ -84,16 +86,21 @@ export const OverviewDescriptionWrapper = styled.div`
 
 
 export const TimelineWrapper = styled.div`
-    flex: 1;
-    display: flex;
+    display: block;
     flex-direction: column;
     min-width: 1100px;
-    position: relative;
+    position: fixed;
+    bottom: 0;
+    height: 30%;
+    cursor: grab;
     @media ${props => props.theme.breakpoints.mobileAndTablet}
     {
         margin-bottom: 5rem;
     }
-
+    :active
+    {
+        cursor: grabbing;
+    }
     overflow: scroll;
     ::-webkit-scrollbar
     {
@@ -111,20 +118,18 @@ export const TimelineWrapper = styled.div`
 
 export const EventsWrapper = styled.div`
     width: 100%;
-    flex: 1;
+    height:100%;
     display: grid;
     grid-template-columns: repeat(108, minmax(1px, 1fr));
-    grid-template-rows: 0.23fr 0.23fr 0.23fr 0.23fr ;
+    grid-template-rows: 0.23fr 0.23fr 0.23fr 0.23fr 0.1fr;
     row-gap: 0.5rem;
     column-gap: 0.1rem;
     overflow-x: hidden;
-    cursor: grab;
-
     transition: opacity .3s;
     color: ${props => props.theme.colors.mainBlack};
-
     span
     {
+        cursor: pointer;
         display: flex;
         justify-content: center;
         flex-direction: column;
@@ -151,7 +156,6 @@ export const EventsWrapper = styled.div`
 
         :hover
         {
-            cursor: pointer;
             background-color: ${props=> props.theme.colors.mainYellow} !important;
         }
         
@@ -181,26 +185,39 @@ export const YearIndicator = styled.div`
     flex: 0.1;
     width: 100%;
     display: grid;
+    color: ${props => props.theme.colors.mainWhite};
     grid-template-columns: repeat(9, minmax(auto, 1fr));
+
     h5
     {
         height: fit-content;
+        font-weight: lighter;
+        width: fit-content;
+        margin-bottom: 0.2rem;
+        border-left: solid ${props => props.theme.colors.mainWhite} 1px; 
+        padding-top: 3px;
+        padding-left: 2px;
     }
 `;
 
 export const HideTimeline = styled.div`
-    position: absolute;
-    right: 5px;
-    bottom: 5.2rem;
+    position: fixed;
+    background-color: ${props=>props.theme.colors.mainYellow};
+    bottom: 1rem;
+    left: 5.5rem;
+    padding: 0.8rem;
+    font-size: 0.8rem;
+    border-radius: 5px;
     z-index: ${zIndexPriority.hideTimelineText};
-    color: ${props=>props.theme.colors.mainYellow};
+    color: ${props=>props.theme.colors.mainBlack};
     cursor: pointer;
-
-    display: none;
     @media ${props=>props.theme.breakpoints.mobileAndTablet}
     {
-        display: block;
+        font-size: 0.80rem !important;
+        bottom: 5.5rem;
+        left: 0rem;
     }
+
 `;
 
 export const BlackBackground = styled.div`
@@ -211,8 +228,4 @@ export const BlackBackground = styled.div`
     z-index: ${zIndexPriority.BlackBackground};
     pointer-events: none;
     transition: height.4s;
-    @media ${props=>props.theme.breakpoints.mobileAndTablet}
-    {
-        display: absolute !important;
-    }
 `;

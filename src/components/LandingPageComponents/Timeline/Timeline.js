@@ -106,7 +106,7 @@ export default function Timeline(props)
             <BlackBackground id="black-background"/>
             <HideTimeline id="hide-timeline-text" onClick={()=>hideTimeline(setHideNavBarToggle, hideNavBarToggle)} >Hide Timeline</HideTimeline>
             <TimelineWrapper id="timeline-wrapper">
-                <YearIndicator>
+                <YearIndicator id="year-indicator">
                     {frontmatterData.current.map(data => 
                             <h5 >
                                 {data.year}

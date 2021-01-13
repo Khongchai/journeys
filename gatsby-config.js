@@ -6,10 +6,9 @@ module.exports = {
     title: "Journeys",
     description: "Khongchai's 2021 Graduate Recital",
     author: "Khongchai",
-    url: "khongchai.github.io/journeys",
+    url: "khongchai.github.io",
     image: "images/tchaikovsky-for-helmet.jpg",
   },
-  
   plugins: 
   [
     "gatsby-plugin-styled-components",
