@@ -81,7 +81,7 @@ export default function Timeline(props)
     const [hideNavBarToggle, setHideNavBarToggle] = useState(true);
 
     useEffect(() => 
-    {
+    {   
         manageEventStartAndEndPosition(frontmatterData.current);
         handleTimelineMove();
         setBlackBackgroundHeight();

@@ -1,32 +1,9 @@
 import React from "react";
 import {FooterWrapper, FooterIconsWrapper} from "../elements";
-import {useStaticQuery, graphql} from "gatsby";
 
 export const Footer = () =>
 {
-    /*
-    const data = useStaticQuery(graphql`
-        query
-        {
-            spotify: file(relativePath: {eq: "spotify.svg"})
-            {
-                publicURL
-            }
-            github: file(relativePath: {eq: "github.svg"})
-            {
-                publicURL
-            }
-            facebook: file(relativePath: {eq: "facebook.svg"})
-            {
-                publicURL
-            }
-            youtube: file(relativePath: {eq: "youtube.svg"})
-            {
-                publicURL
-            }
-        }
-    `)
-    */
+
     return(
         <FooterWrapper>
             <FooterIconsWrapper>

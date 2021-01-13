@@ -25,10 +25,11 @@ export const Navbar = () =>
         window.addEventListener("resize", () => checkIfOffScreen());
     }, []);
     
+
     return(
         <>
             <HomeElement id="home-button" to="/">
-                <HomeIcon/>
+                <HomeIcon />
             </HomeElement>
 
             <NavbarWrapper id="navbar-wrapper"> 

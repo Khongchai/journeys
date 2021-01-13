@@ -1,6 +1,7 @@
 import React, {useState, useEffect, useRef} from "react";
 import {manageMainSectionsHighlight} from "./utils/viewPortVisibilityMonitor";
 import manageLineIndicator from "./utils/manageLineIndicator";
+import {Link} from "gatsby";
 
 export const SideContentBarContent = () =>
 {
@@ -30,7 +31,7 @@ export const SideContentBarContent = () =>
     return(
         <>
             {allHeadingTexts.map(heading => (
-                <a href={`#${heading}`} onClick={(e) => 
+                <Link to={`#${heading}`} onClick={(e) => 
                     {
                         //wait time should be a bit more than the transition time for runningline element
                         setTimeout(()=>{
@@ -38,7 +39,7 @@ export const SideContentBarContent = () =>
                         }, 170);
                         return true;
                     }   
-                } id={`sidebar${heading}`} className="sidebar-sections" key={heading}>{heading}</a>
+                } id={`sidebar${heading}`} className="sidebar-sections" key={heading}>{heading}</Link>
             ))}
         </>
     )

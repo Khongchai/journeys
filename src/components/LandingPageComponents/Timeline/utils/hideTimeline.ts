@@ -16,11 +16,13 @@ export default function hideTimeline(setToggle: Function, toggle: boolean)
     {
         text.innerHTML = "Show Timeline";
 
-        timelineWrapper.style.height = "0";
-        timelineWrapper.style.transition = `height .${transitionVal}s`;
+        timelineWrapper.style.opacity = "0";
+        timelineWrapper.style.transition = `opacity .${transitionVal}s`;
 
-        blackBackground.style.height = "0";
-        blackBackground.style.transition = `height .${transitionVal}s`;
+        blackBackground.style.opacity = "0";
+        blackBackground.style.transition = `opacity .${transitionVal}s`;
+
+        timelineWrapper.style.pointerEvents = "none";
 
         setToggle(false);   
     }
@@ -28,16 +30,13 @@ export default function hideTimeline(setToggle: Function, toggle: boolean)
     {
         text.innerHTML = "Hide Timeline";
 
-        timelineWrapper.style.height = "30%";
-        
-        //only remove blackbackgrond's transition because user might scroll
-        //immediately after the navbar gets back to the original value.
-        //and there is no need to remove timelinewrapper's transition value
+        timelineWrapper.style.opacity = "1";
+        timelineWrapper.style.pointerEvents = "";
+
         blackBackground.style.transition = "";
-        setTimeout(()=>
-        {
-            setBlackBackgroundHeight();
-        }, waitTime);
+        blackBackground.style.opacity = "1";
+
+        timelineWrapper.style.pointerEvents = "auto";
         
         setToggle(true);   
     }
