@@ -19,4 +19,7 @@ Timeline picture and description:
 8. Do the card thing for credit page
 
 
+for blackbar --> maybe put it inside the flex while the position is absolute?
+
+
 
