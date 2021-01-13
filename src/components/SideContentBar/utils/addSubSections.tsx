@@ -12,7 +12,6 @@ export default function manageSubSections(sectionName: string, operation: string
         {
             let newSection: HTMLAnchorElement = document.createElement("a");
 
-            //For styling different from the parent element.
             newSection.classList.add("subsection-anchor");
 
             newSection.href = `#${subSections[i].innerHTML}`;
@@ -37,3 +36,7 @@ function haveChildrenAlready(sidebarSection: HTMLElement): boolean
 {
     return sidebarSection.getElementsByTagName("a").length > 0;
 }
+
+function insertAfter(referenceNode: HTMLElement, newNode: HTMLElement) {
+    referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+  }

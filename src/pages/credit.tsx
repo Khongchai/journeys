@@ -1,9 +1,12 @@
 import React from "react";
-import { CreditPage } from "../components";
+import { CreditPage, Cards} from "../components";
+
 
 export default function Credit()
 {
     return(
-        <CreditPage>This is the credit page</CreditPage>
+        <CreditPage>
+            <Cards/>
+        </CreditPage>
     );
 }

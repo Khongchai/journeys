@@ -11,7 +11,7 @@ export default function Layout ({children})
         <>
             <SEO/>
             <Navbar/>
-                {children}
+            {children}
         </> 
     );
 }

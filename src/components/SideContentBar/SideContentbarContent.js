@@ -2,6 +2,8 @@ import React, {useState, useEffect, useRef} from "react";
 import {manageMainSectionsHighlight} from "./utils/viewPortVisibilityMonitor";
 import manageLineIndicator from "./utils/manageLineIndicator";
 import {Link} from "gatsby";
+import manageSubSections from "./utils/addSubSections";
+import manageSubSectionsHighlight from "./utils/viewPortVisibilityMonitor/manageSubSectionsHighlight";
 
 export const SideContentBarContent = () =>
 {
@@ -17,7 +19,7 @@ export const SideContentBarContent = () =>
             //only run when thre is a side bar
             if (document.getElementById("line-indicator"))
             {
-                manageMainSectionsHighlight(allHeadingsHTMLElem.current);
+                manageMainAndSubsections(allHeadingsHTMLElem);
                 manageLineIndicator();
             } 
         }
@@ -31,15 +33,19 @@ export const SideContentBarContent = () =>
     return(
         <>
             {allHeadingTexts.map(heading => (
-                <Link to={`#${heading}`} onClick={(e) => 
-                    {
-                        //wait time should be a bit more than the transition time for runningline element
-                        setTimeout(()=>{
-                            manageLineIndicator();
-                        }, 170);
-                        return true;
-                    }   
-                } id={`sidebar${heading}`} className="sidebar-sections" key={heading}>{heading}</Link>
+                <div id={`sidebar${heading}parent`} >
+                <Link  to={`#${heading}`} onClick={(e) => 
+                        {
+                            //wait time should be a bit more than the transition time for runningline element
+                            setTimeout(()=>{
+                                manageLineIndicator();
+                            }, 170);
+                            return true;
+                        }   
+                    } 
+                    id={`sidebar${heading}`}  className="sidebar-sections" key={heading}>{heading}</Link>
+                </div>
+                
             ))}
         </>
     )
@@ -55,6 +61,12 @@ function getTextFromHTMLAndSetID(HTMLArray)
         array.push(text);
     }
     return array;
+}
+
+function manageMainAndSubsections(allHeadingsHTMLElem)
+{
+    manageMainSectionsHighlight(allHeadingsHTMLElem.current);
+    manageSubSectionsHighlight();
 }
 
 

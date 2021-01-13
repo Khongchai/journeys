@@ -1,7 +1,16 @@
 import React from 'react';
-import {CreditPageWrapper} from "../elements";
+import {CreditPageWrapper, CreditHeader} from "../elements";
+
 
 export function CreditPage({children})
 {
-    return <CreditPageWrapper>{children}</CreditPageWrapper>;
+    return (
+    <CreditPageWrapper>
+        <CreditHeader>
+            Credit
+        </CreditHeader>
+        {children}
+    </CreditPageWrapper>
+        
+        );
 }

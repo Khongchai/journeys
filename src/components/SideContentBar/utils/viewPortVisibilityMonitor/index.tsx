@@ -2,7 +2,6 @@ import addSubSections from "../addSubSections";
 import getBottomThreshold from "./getBottomThreshold";
 import getTopThreshold from "./getTopThreshold";
 import elementIsVisibleInViewport from "./elementIsVisibleInViewport";
-import manageSubSectionsHighlight from "./manageSubSectionsHighlight";
 
 export function manageMainSectionsHighlight(elems: HTMLCollectionOf<Element>)
 {
@@ -30,11 +29,11 @@ export function manageMainSectionsHighlight(elems: HTMLCollectionOf<Element>)
             else
             {
                 addSubSections(sectionName, "REMOVE");
-                sidebarSection.classList.remove("active");
+                sidebarSection.classList.remove("active");;
             }
         }
     }
-    manageSubSectionsHighlight();
+
 }
 
 
