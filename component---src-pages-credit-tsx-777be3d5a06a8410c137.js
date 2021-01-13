@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[3],{P6H2:function(n,e,t){"use strict";t.r(e),t.d(e,"default",(function(){return c}));var i=t("q1tI"),r=t.n(i),u=t("Kvkj");function c(){return r.a.createElement(u.b,null,"This is the credit page")}}}]);
+//# sourceMappingURL=component---src-pages-credit-tsx-777be3d5a06a8410c137.js.map
