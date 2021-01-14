@@ -31,7 +31,6 @@ export const ContentBarWrapper = styled.div`
         color: black;
         font-weight: normal;
         font-size: 1rem;
-        margin-top: 1.9rem;
         :hover
         {
             color: ${props => props.theme.colors.mainMagenta} !important;

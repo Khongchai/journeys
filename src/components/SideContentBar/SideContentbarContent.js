@@ -33,7 +33,7 @@ export const SideContentBarContent = () =>
     return(
         <>
             {allHeadingTexts.map(heading => (
-                <div id={`sidebar${heading}parent`} >
+                <div id={`sidebar${heading}parent`} style={{paddingTop: "1.9rem"}} >
                 <Link  to={`#${heading}`} onClick={(e) => 
                         {
                             //wait time should be a bit more than the transition time for runningline element

@@ -18,7 +18,8 @@ export default function manageSubSections(sectionName: string, operation: string
             subSections[i].id = subSections[i].innerHTML;
 
             newSection.innerHTML = (`${subSections[i].innerHTML}`);
-            sidebarSection.appendChild(newSection);
+            sidebarSection.parentElement.appendChild(newSection);
+            //sidebarSection.appendChild(newSection);
 
         }
     }
@@ -26,7 +27,8 @@ export default function manageSubSections(sectionName: string, operation: string
     {
         for (let i = 0; i < subSecLength; i++)
         {
-            sidebarSection.removeChild(sidebarSection.lastElementChild);
+            sidebarSection.parentElement.removeChild(sidebarSection.parentElement.lastElementChild);
+            //sidebarSection.removeChild(sidebarSection.lastElementChild);
         }
     }
 
@@ -34,7 +36,8 @@ export default function manageSubSections(sectionName: string, operation: string
 
 function haveChildrenAlready(sidebarSection: HTMLElement): boolean
 {
-    return sidebarSection.getElementsByTagName("a").length > 0;
+    return sidebarSection.parentElement.getElementsByTagName("a").length > 1;
+    //return sidebarSection.getElementsByTagName("a").length > 1;
 }
 
 function insertAfter(referenceNode: HTMLElement, newNode: HTMLElement) {
