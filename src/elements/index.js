@@ -7,4 +7,4 @@ export * from "./DynamicPagesContainerElements";
 export * from "./FooterElements";
 export * from "./SideContentElements";
 export * from "./CreditPageElements";
-export * from "./CardElements";
+export * from "./CardElements/CardElements";

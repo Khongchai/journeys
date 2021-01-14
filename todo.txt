@@ -7,8 +7,5 @@ refactor all the code
 6. Work on Analysis
 8. Do the card thing for credit page >> for mobile: make the cards reveal text hidden under them.
 
-9. Refactor add subsections to add siblings instead.
-9.1 and checkout https://www.gatsbyjs.com/plugins/gatsby-plugin-anchor-links/
-
 
 

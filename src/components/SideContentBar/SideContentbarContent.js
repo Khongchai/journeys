@@ -2,7 +2,6 @@ import React, {useState, useEffect, useRef} from "react";
 import {manageMainSectionsHighlight} from "./utils/viewPortVisibilityMonitor";
 import manageLineIndicator from "./utils/manageLineIndicator";
 import {Link} from "gatsby";
-import manageSubSections from "./utils/addSubSections";
 import manageSubSectionsHighlight from "./utils/viewPortVisibilityMonitor/manageSubSectionsHighlight";
 
 export const SideContentBarContent = () =>

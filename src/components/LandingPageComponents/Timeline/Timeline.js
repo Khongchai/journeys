@@ -108,7 +108,7 @@ export default function Timeline(props)
             <TimelineWrapper id="timeline-wrapper">
                 <YearIndicator id="year-indicator">
                     {frontmatterData.current.map(data => 
-                            <h5 >
+                            <h5>
                                 {data.year}
                             </h5>) 
                                 }

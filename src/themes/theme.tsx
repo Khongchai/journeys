@@ -9,6 +9,7 @@ export default
     {
         mainWhite: "#F3FCF0",
         mainPurple: "#540D6E",
+        secondaryPurple: "#72288d",
         mainMagenta: "#EE4266",
         mainYellow: "#FFD23F",
         mainBlack: "#1F271B",

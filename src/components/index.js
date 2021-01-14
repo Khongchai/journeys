@@ -7,4 +7,4 @@ export * from  "./SideContentBar/SideContentBar";
 export * from "./SideContentBar/SideContentbarContent";
 export * from "./Seo";
 export * from "./CreditPage";
-export * from "./CardsForCredit";
+export * from "./CardsForCredit/CardsForCredit";
