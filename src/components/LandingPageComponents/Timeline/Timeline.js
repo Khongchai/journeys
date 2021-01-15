@@ -118,15 +118,15 @@ export default function Timeline(props)
                         //check null for featureImage using ternary or maybe not pass id, just pass the image
                         return(
                             <>
-                                <span key={data.topic1} className="event" onClick={()=>setOverviewDataAndBlackBackgroundHeight(data.year, data.topic1, 
+                                <span role="presentation" key={data.topic1} className="event" onClick={()=>setOverviewDataAndBlackBackgroundHeight(data.year, data.topic1, 
                                 data.topic1excerpt, data.featureImageI? 
                                 data.featureImageI.childImageSharp.fluid: null)
                                 }>
                                     <p>{data.topic1}</p>
                                 </span>
                                 {
-                                !data.topic2? <span className="event empty-placeholder" style={{display: "none"}}></span>:
-                                    <span key={data.topic2} 
+                                !data.topic2? <span role="presentation" className="event empty-placeholder" style={{display: "none"}}></span>:
+                                    <span role="presentation" key={data.topic2} 
                                     onClick={()=>setOverviewDataAndBlackBackgroundHeight(data.year, data.topic2, 
                                     data.topic2excerpt, data.featureImageII? data.featureImageII.childImageSharp.fluid: null
                                     )} className="event">
@@ -134,8 +134,8 @@ export default function Timeline(props)
                                     </span>
                                 }
                                 {
-                                !data.topic3? <span className="event empty-placeholder" style={{display: "none"}}></span>:
-                                    <span key={data.topic3} onClick={()=>setOverviewDataAndBlackBackgroundHeight(data.year, data.topic3, data.topic3excerpt, 
+                                !data.topic3? <span role="presentation" className="event empty-placeholder" style={{display: "none"}}></span>:
+                                    <span role="presentation" key={data.topic3} onClick={()=>setOverviewDataAndBlackBackgroundHeight(data.year, data.topic3, data.topic3excerpt, 
                                     data.featureImageIII? data.featureImageIII.childImageSharp.fluid: null)} className="event">
                                         <p>{data.topic3}</p>
                                     </span>

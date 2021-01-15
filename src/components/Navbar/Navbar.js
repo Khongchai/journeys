@@ -45,15 +45,6 @@ export const Navbar = () =>
                     </NavItem>
 
                     <NavItem className="nav-item">
-                        <NavLink to="/biography">
-                            <BiographyIcon/>
-                            <LinkText className="link-text">
-                                {bioText}
-                            </LinkText>
-                        </NavLink>
-                    </NavItem>
-
-                    <NavItem className="nav-item">
                         <NavLink to="/about">
                             <AboutIcon/>
                             <LinkText className="link-text">
@@ -62,6 +53,14 @@ export const Navbar = () =>
                         </NavLink>
                     </NavItem>
 
+                    <NavItem className="nav-item">
+                        <NavLink to="/biography">
+                            <BiographyIcon/>
+                            <LinkText className="link-text">
+                                {bioText}
+                            </LinkText>
+                        </NavLink>
+                    </NavItem>
                     <NavItem className="nav-item">
                         <NavLink to="/approach">
                             <ResearchIcon/>

@@ -8,3 +8,4 @@ export * from "./FooterElements";
 export * from "./SideContentElements";
 export * from "./CreditPageElements";
 export * from "./CardElements/CardElements";
+export * from "./EnlargedImageAreaElements";

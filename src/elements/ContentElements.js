@@ -182,12 +182,17 @@ export const ContentWrapper = styled.main`
     img
     {
         transition: box-shadow .3s;
-        margin: 1rem;
+        margin-top: 1rem;
         width: 100%;
+        cursor: pointer;
     }
     img:hover
     {
         box-shadow: rgba(46, 41, 51, 0.08) 0px 4px 16px, rgba(71, 63, 79, 0.16) 0px 8px 24px;
+    }
+    .image-caption
+    {
+        text-align: right;
     }
 
 `;
