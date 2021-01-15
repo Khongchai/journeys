@@ -4,8 +4,8 @@ TODO
 refactor all the code
 
 
-6. Work on Analysis
+6. Add info to Analysis
 8. Do the card thing for credit page >> for mobile: make the cards reveal text hidden under them.
-
+9. Credit page: add extra information at the bottom when users click on each of the cards.
 
 

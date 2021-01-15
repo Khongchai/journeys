@@ -7,13 +7,16 @@ export const CardList = styled.div`
     justify-content: center;
     width: 100%;
     flex:2;
+    flex-wrap: wrap;
     @media ${props => props.theme.breakpoints.mobileAndTablet}
     {
         flex-direction: column;
         align-items: center;
         padding-bottom: 200px;
         justify-content: center;
-        
+        padding-left: 0;
+        padding-right: 0;
+
     }
 `;
 
@@ -26,11 +29,11 @@ export const CardWrapper = styled.article`
     min-width: 288px;
     padding: 1.5rem;
     margin-right: 5rem;
+    margin-bottom: 3rem;
     border-radius: 16px;
     background-image: url(${backgroundImage});
     box-shadow: 0rem -2rem 7rem -2.7rem #000;
     border-radius: 22px;
-    background-color: crimson;
     transition: .2s;
     align-items: center;
     :hover
@@ -49,17 +52,17 @@ export const CardWrapper = styled.article`
     @media ${props => props.theme.breakpoints.mobileAndTablet}
     {
         margin-left: 0px !important;
-            margin-right: 0px !important;
+        margin-right: 0px !important;
+        margin-bottom: 0px !important;
         :not(:first-child)
         {
-
             margin-top: -100px;
         }
         :hover
         {
             ~.cards
             {
-                transform: translateX(30px);
+                transform: translateX(0px);
             }
         }
     }
@@ -73,8 +76,6 @@ export const CardWrapper = styled.article`
         opacity: 0.6;
         font-size: 25px;
         margin-top: 0.2rem;
-
-
     }
     h4
     {
@@ -94,15 +95,15 @@ export const CardWrapper = styled.article`
         margin-bottom: 0.5rem;
         object-fit: cover;
     }
-`;
-
-export const CardHeader = styled.header`
-    font-size: 2rem;
-    text-align: center;
-    transition: background .2s;
-    @media ${props => props.theme.breakpoints.mobileAndTablet}
+    h2, h4, img
     {
-
-        font-size: 1.5rem;
+        -webkit-user-select: none; /* Safari */
+        -ms-user-select: none; /* IE 10 and IE 11 */
+        user-select: none; /* Standard syntax */
+        pointer-events: none;
     }
+    background-color:crimson;
+
 `;
+
+

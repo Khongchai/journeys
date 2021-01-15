@@ -1,21 +1,24 @@
 import React from "react";
-import {CardHeader, CardList, CardWrapper} from "../../elements";
+import {CardList, CardWrapper} from "../../elements";
 import hayne from "./Hayne.jpg";
 import jd from "./JD.jpg";
 import iris from "./Iris.jpg";
+import khong from "./Khong.jpg";
 
 export function Cards()
 {
     return(
         <>
             <CardList>
-                <Card name="HAYNE" title="Violin Professor" source={hayne} />
-                <Card name="JD" title="Recital Advisor" source={jd}/>  
-                <Card name="IRIS" title="UX/UI Advisor" source={iris} />  
+                <Card name="KHONG" title="Performer" source={khong} />
+                <Card name="HAYNE" title="Violin Instructor" source={hayne} />
+                <Card name="JD" title="Project Advisor" source={jd}/>  
+                <Card name="IRIS" title="UX/UI Advisor" source={iris} /> 
             </CardList>
         </>
     );
 }
+
 
 function Card(props)
 {
