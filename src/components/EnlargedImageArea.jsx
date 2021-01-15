@@ -5,7 +5,7 @@ export const EnlargedImageArea = (props) =>
 {
     return(
         <EnlargedImageAreaWrapper id="image-area" onClick={(e)=>{e.target.style.display = "none";}}>
-            <img src={props.imageSRC}/>
+            <img alt="enlarged img" src={props.imageSRC}/>
         </EnlargedImageAreaWrapper>
     )
 }

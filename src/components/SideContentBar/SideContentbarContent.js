@@ -3,6 +3,7 @@ import {manageMainSectionsHighlight} from "./utils/viewPortVisibilityMonitor";
 import manageLineIndicator from "./utils/manageLineIndicator";
 import {Link} from "gatsby";
 import manageSubSectionsHighlight from "./utils/viewPortVisibilityMonitor/manageSubSectionsHighlight";
+import { navigate } from '@reach/router';
 
 export const SideContentBarContent = () =>
 {
@@ -33,8 +34,9 @@ export const SideContentBarContent = () =>
         <>
             {allHeadingTexts.map(heading => (
                 <div id={`sidebar${heading}parent`} style={{paddingTop: "1.9rem"}} >
-                <Link  to={`#${heading}`} onClick={(e) => 
+                <span style={{cursor: "pointer"}} onClick={() => 
                         {
+                            navigate(`#${heading}`);
                             //wait time should be a bit more than the transition time for runningline element
                             setTimeout(()=>{
                                 manageLineIndicator();
@@ -42,7 +44,7 @@ export const SideContentBarContent = () =>
                             return true;
                         }   
                     } 
-                    id={`sidebar${heading}`}  className="sidebar-sections" key={heading}>{heading}</Link>
+                    id={`sidebar${heading}`}  className="sidebar-sections" key={heading}>{heading}</span>
                 </div>
                 
             ))}

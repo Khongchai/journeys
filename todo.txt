@@ -9,4 +9,6 @@ refactor all the code
 9. Credit page: add extra information at the bottom when users click on each of the cards.
 10. Find out why the homebutton is not moveable sometimes.
 11. User shouldn't be able to highlight the picture in the landing page.
+12. All images are fixed, FUCKCKKKC download the traced svgs now. >> Once this is done, answer your own question on Stackoverflow
+13. The side navbar sometimes does not fucking work
 
