@@ -27,7 +27,7 @@ workbox.core.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-c64f42f7b01d2fbdcd36.js"
+    "url": "webpack-runtime-a9afa85e2efa9c6066d5.js"
   },
   {
     "url": "styles.c8c37f74b4783fa38427.css"
@@ -39,11 +39,11 @@ self.__precacheManifest = [
     "url": "framework-d066f55745d479a55fde.js"
   },
   {
-    "url": "app-052e5d432b9e930f318f.js"
+    "url": "app-f981d6ac8094bf9de465.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "ccb9b06179475e8edd719b4806d7cef7"
+    "revision": "bc519825046783dc40c75596bdef8fe9"
   },
   {
     "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-19245c8506e49b502b12.js"
@@ -53,8 +53,22 @@ self.__precacheManifest = [
     "revision": "d2dacdcbf92ed8eacb2cc0731e3d9362"
   },
   {
+    "url": "page-data/app-data.json",
+    "revision": "baca010ee5203b663b0b30d0f1a08d9b"
+  },
+  {
+    "url": "polyfill-904ff851a679029ed10b.js"
+  },
+  {
+    "url": "component---src-templates-blog-template-js-9f6f2d036f41e93c8f39.js"
+  },
+  {
+    "url": "page-data/about/page-data.json",
+    "revision": "368d8bee86d1fda9a9a4c76ee175e072"
+  },
+  {
     "url": "page-data/sq/d/1325267445.json",
-    "revision": "3c1c9561433f3a69218e7c648eb9e6d9"
+    "revision": "6e0a950ea8e515a401ce70e333df46c1"
   },
   {
     "url": "page-data/sq/d/1782643211.json",
@@ -67,20 +81,6 @@ self.__precacheManifest = [
   {
     "url": "page-data/sq/d/3361508366.json",
     "revision": "ecfe616c4eb496286b1f706f0d2cc776"
-  },
-  {
-    "url": "page-data/app-data.json",
-    "revision": "8358c386b0e7a1ffd810ced29bd1ab08"
-  },
-  {
-    "url": "polyfill-904ff851a679029ed10b.js"
-  },
-  {
-    "url": "component---src-templates-blog-template-js-9f6f2d036f41e93c8f39.js"
-  },
-  {
-    "url": "page-data/about/page-data.json",
-    "revision": "368d8bee86d1fda9a9a4c76ee175e072"
   },
   {
     "url": "page-data/analysis/page-data.json",
@@ -193,12 +193,12 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   lastNavigationRequest = event.request.url
 
   let { pathname } = new URL(event.request.url)
-  pathname = pathname.replace(new RegExp(`^/journeys`), ``)
+  pathname = pathname.replace(new RegExp(`^`), ``)
 
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/journeys/app-052e5d432b9e930f318f.js`))) {
+  if (!resources || !(await caches.match(`/app-f981d6ac8094bf9de465.js`))) {
     return await fetch(event.request)
   }
 
@@ -211,7 +211,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
     }
   }
 
-  const offlineShell = `/journeys/offline-plugin-app-shell-fallback/index.html`
+  const offlineShell = `/offline-plugin-app-shell-fallback/index.html`
   const offlineShellWithKey = workbox.precaching.getCacheKeyForURL(offlineShell)
   return await caches.match(offlineShellWithKey)
 })
