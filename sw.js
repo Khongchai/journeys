@@ -27,7 +27,7 @@ workbox.core.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-a9afa85e2efa9c6066d5.js"
+    "url": "webpack-runtime-c64f42f7b01d2fbdcd36.js"
   },
   {
     "url": "styles.c8c37f74b4783fa38427.css"
@@ -39,11 +39,11 @@ self.__precacheManifest = [
     "url": "framework-d066f55745d479a55fde.js"
   },
   {
-    "url": "app-f981d6ac8094bf9de465.js"
+    "url": "app-1dd426b16b0ad340b8c8.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "bc519825046783dc40c75596bdef8fe9"
+    "revision": "112a63d163f66ce9a8da3da274a9fa42"
   },
   {
     "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-19245c8506e49b502b12.js"
@@ -53,8 +53,24 @@ self.__precacheManifest = [
     "revision": "d2dacdcbf92ed8eacb2cc0731e3d9362"
   },
   {
+    "url": "page-data/sq/d/1325267445.json",
+    "revision": "3c1c9561433f3a69218e7c648eb9e6d9"
+  },
+  {
+    "url": "page-data/sq/d/1782643211.json",
+    "revision": "51d1a0ada5650e71344bbc5b9b165c6b"
+  },
+  {
+    "url": "page-data/sq/d/271959482.json",
+    "revision": "67956d31c17c82faa0e843e2d91f93b6"
+  },
+  {
+    "url": "page-data/sq/d/3361508366.json",
+    "revision": "ecfe616c4eb496286b1f706f0d2cc776"
+  },
+  {
     "url": "page-data/app-data.json",
-    "revision": "baca010ee5203b663b0b30d0f1a08d9b"
+    "revision": "46b2ed7bbbc86b90d8d14e431ebe26e3"
   },
   {
     "url": "polyfill-904ff851a679029ed10b.js"
@@ -65,22 +81,6 @@ self.__precacheManifest = [
   {
     "url": "page-data/about/page-data.json",
     "revision": "368d8bee86d1fda9a9a4c76ee175e072"
-  },
-  {
-    "url": "page-data/sq/d/1325267445.json",
-    "revision": "6e0a950ea8e515a401ce70e333df46c1"
-  },
-  {
-    "url": "page-data/sq/d/1782643211.json",
-    "revision": "51d1a0ada5650e71344bbc5b9b165c6b"
-  },
-  {
-    "url": "page-data/sq/d/271959482.json",
-    "revision": "a70e5b574aafd8a5976f9364d168ad2a"
-  },
-  {
-    "url": "page-data/sq/d/3361508366.json",
-    "revision": "ecfe616c4eb496286b1f706f0d2cc776"
   },
   {
     "url": "page-data/analysis/page-data.json",
@@ -193,12 +193,12 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   lastNavigationRequest = event.request.url
 
   let { pathname } = new URL(event.request.url)
-  pathname = pathname.replace(new RegExp(`^`), ``)
+  pathname = pathname.replace(new RegExp(`^/journeys`), ``)
 
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/app-f981d6ac8094bf9de465.js`))) {
+  if (!resources || !(await caches.match(`/journeys/app-1dd426b16b0ad340b8c8.js`))) {
     return await fetch(event.request)
   }
 
@@ -211,7 +211,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
     }
   }
 
-  const offlineShell = `/offline-plugin-app-shell-fallback/index.html`
+  const offlineShell = `/journeys/offline-plugin-app-shell-fallback/index.html`
   const offlineShellWithKey = workbox.precaching.getCacheKeyForURL(offlineShell)
   return await caches.match(offlineShellWithKey)
 })
