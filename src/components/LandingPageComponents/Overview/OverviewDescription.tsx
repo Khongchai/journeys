@@ -1,27 +1,12 @@
 import React from "react";
 import {OverviewDescriptionWrapper} from "../../../elements";
-import {graphql, useStaticQuery, Link} from "gatsby";
+import {Link} from "gatsby";
 import {OverviewDataRequest} from "../sharedInterfaces";
 
 export default function OverviewDescription(props: any)
 {
-    const query = useStaticQuery(graphql`
-        query  
-        {
-            mdx(id: {eq: "ce798400-e8a9-528c-8cc0-4960e8f4b5fc"}) 
-            {
-                frontmatter 
-                {
-                    topic1
-                    topic1excerpt
-                    year
-                }
-            }
-    }
-    `);
-
     const overviewData: OverviewDataRequest = props.requestedOverviewData? props.requestedOverviewData:
-    {year: query.mdx.frontmatter.year, topic: query.mdx.frontmatter.topic1, excerpt: query.mdx.frontmatter.topic1excerpt};
+    {year: props.fallbackData.frontmatter.year, topic: props.fallbackData.frontmatter.topic1, excerpt: props.fallbackData.frontmatter.topic1excerpt};
 
     function clickYear(year:number)
     {

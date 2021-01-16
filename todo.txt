@@ -11,4 +11,6 @@ refactor all the code
 11. User shouldn't be able to highlight the picture in the landing page.
 12. All images are fixed, FUCKCKKKC download the traced svgs now. >> Once this is done, answer your own question on Stackoverflow
 13. The side navbar sometimes does not fucking work
+14. Think about the side navbar in mobile mode.
+15. the nav link anchor only works once until user clicks something else...wtf?
 
