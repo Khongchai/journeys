@@ -10,6 +10,8 @@ export const ContentBarWrapper = styled.div`
     padding-top: 3rem;
     top: 0;
     width: max-content;
+    padding-left: 30px;
+    overflow-y: scroll;
     ::-webkit-scrollbar
     {
         display: none;
@@ -53,10 +55,10 @@ export const ContentBarWrapper = styled.div`
 export const RunningLine = styled.span`
     position: absolute;
     height: 1rem;
-    left: -1.6rem;
     width: 0.3rem;
     background-color: ${props => props.theme.colors.mainMagenta};
     top: -20px;
     transition: top .15s ease-out, height .05s;
     border-radius: 3px;
+    left: 0;
 `;

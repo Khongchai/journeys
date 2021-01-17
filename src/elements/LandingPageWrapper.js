@@ -37,6 +37,8 @@ export const OverviewPictureViewWrapper = styled.div`
     flex-direction: column;
     align-items: center;
     display: flex;
+    user-select: none;
+    pointer-events: none;
     @media ${props => props.theme.breakpoints.tablet}
     {
         justify-content: center;

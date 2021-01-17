@@ -7,7 +7,7 @@ import
 } from "../../elements";
 import { HomeElement } from "../../elements";
 import React, {useEffect} from "react";
-import handleHomeButtonDrag, {checkIfOffScreen} from "./utils/handleHomeButtonDrag";
+import {checkIfOffScreen} from "./utils/handleHomeButtonDrag";
 
 export const Navbar = () =>
 {
@@ -20,7 +20,6 @@ export const Navbar = () =>
     
     useEffect(() => 
     {
-        handleHomeButtonDrag();
         window.addEventListener("resize", () => checkIfOffScreen());
 
     }, []);
