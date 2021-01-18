@@ -5,6 +5,7 @@ export const ContentWrapper = styled.main`
     grid-column: ${props => props.theme.width.mainContentWidth};
     margin-left: 10px;
     padding: 5.5rem;
+    padding-right: 1.6rem;
     margin-left: 10px;
 
     z-index: 10;
@@ -193,6 +194,30 @@ export const ContentWrapper = styled.main`
     .image-caption
     {
         text-align: right;
+    }
+    .adjacent
+    {
+        width: 40% !important;
+        margin: 1.2rem;
+    }
+
+    .adjacent-images-container
+    {
+        display: flex;
+        align-items: center;
+    }
+
+    .large-image-contain
+    {
+        width: 70% !important;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+
+    .center
+    {
+        text-align: center !important;
     }
 
 `;

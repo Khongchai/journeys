@@ -11,7 +11,9 @@ export const ContentBarWrapper = styled.div`
     top: 0;
     width: max-content;
     padding-left: 30px;
-    overflow-y: scroll;
+    overflow-y: visible;
+    min-width: 200px;
+
     ::-webkit-scrollbar
     {
         display: none;
@@ -45,10 +47,15 @@ export const ContentBarWrapper = styled.div`
     .subsection-anchor
     {
         margin-top: 0.6rem;
-        text-indent: 1rem;
+        //make sure the indent is the same as the indented-topic class + 1
+        text-indent: 2.4rem;
         font-size: 0.8rem;
         position: relative;
         left: 1rem;
+    }
+    .indented-topic
+    {
+        text-indent: 1.4rem;
     }
 `;
 

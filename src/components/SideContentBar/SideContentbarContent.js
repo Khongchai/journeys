@@ -1,7 +1,6 @@
 import React, {useState, useEffect, useRef} from "react";
 import {manageMainSectionsHighlight} from "./utils/viewPortVisibilityMonitor";
 import manageLineIndicator from "./utils/manageLineIndicator";
-import {Link} from "gatsby";
 import manageSubSectionsHighlight from "./utils/viewPortVisibilityMonitor/manageSubSectionsHighlight";
 import { navigate } from '@reach/router';
 
@@ -32,8 +31,10 @@ export const SideContentBarContent = () =>
 
     return(
         <>
-            {allHeadingTexts.map(heading => (
-                <div id={`sidebar${heading}parent`} style={{paddingTop: "1.9rem"}} >
+            {allHeadingTexts.map((heading, i) => (
+                <div id={`sidebar${heading}parent`}
+                className={allHeadingsHTMLElem.current[i].classList.contains("main-topic")? "": "indented-topic"}
+                 style={{paddingTop: "1.9rem"}} >
                 <span style={{cursor: "pointer"}} onClick={() => 
                         {
                             navigate(`#${heading}`);
@@ -57,6 +58,7 @@ function getTextFromHTMLAndSetID(HTMLArray)
     const array = [];
     for (let obj of HTMLArray)
     {
+        if (obj.className === "main-topic") obj.classList.add("center");
         let text = obj.innerHTML;
         obj.id = text;
         array.push(text);
