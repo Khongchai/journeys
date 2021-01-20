@@ -13,6 +13,7 @@ export const ContentBarWrapper = styled.div`
     padding-left: 30px;
     overflow-y: visible;
     min-width: 200px;
+    font-size: 15px;
 
     ::-webkit-scrollbar
     {

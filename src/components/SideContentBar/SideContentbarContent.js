@@ -34,7 +34,7 @@ export const SideContentBarContent = () =>
             {allHeadingTexts.map((heading, i) => (
                 <div id={`sidebar${heading}parent`}
                 className={allHeadingsHTMLElem.current[i].classList.contains("main-topic")? "": "indented-topic"}
-                 style={{paddingTop: "1.9rem"}} >
+                 style={{paddingTop: "1rem"}} >
                 <span style={{cursor: "pointer"}} onClick={() => 
                         {
                             navigate(`#${heading}`);

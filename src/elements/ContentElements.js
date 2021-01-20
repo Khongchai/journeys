@@ -220,4 +220,12 @@ export const ContentWrapper = styled.main`
         text-align: center !important;
     }
 
+    .half-width
+    {
+        width: 50% !important;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+
 `;

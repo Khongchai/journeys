@@ -59,12 +59,6 @@ const GlobalStyles = createGlobalStyle`
         background: ${props => props.theme.colors.mainMagenta};
     }
 
-    html
-    {
-        scroll-behavior:  smooth;
-    }
-
-
 `;
 
 export const wrapRootElement = ({element}) => 
