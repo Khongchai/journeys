@@ -16,11 +16,12 @@ export function manageMainSectionsHighlight(elems: HTMLCollectionOf<Element>)
         let sidebarSection: HTMLElement = document.getElementById(sectionID);
 
         let targetParagraph: HTMLElement = document.getElementById(`${sectionName}paragraph`);
+        //console.log(parseInt(window.getComputedStyle(targetParagraph).getPropertyValue("height")));
         let paragraphHeight: number = parseInt(window.getComputedStyle(targetParagraph).getPropertyValue("height"));
 
         //if there exist a subsection of id ${sectionName}
         if (targetParagraph)
-        {        
+        {   
             if (elementIsVisibleInViewport(elems[i].getBoundingClientRect().y, bottomThreshold, topThreshold, elems[i].getBoundingClientRect().y + paragraphHeight))
             { 
                 sidebarSection.classList.add("active");

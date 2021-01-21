@@ -7,5 +7,6 @@ refactor all the code
 6. Add info to Analysis
 14. Think about the side navbar in mobile mode.
 15. the nav link anchor only works once until user clicks something else...wtf?
-
+16. For the problem with side navbar not loading sometimes = some id tags fail to load....
+16:: does not happen in development:: maybe something to do with something load before another thing...:: dirty hack = if the error exists, refresh page
 
