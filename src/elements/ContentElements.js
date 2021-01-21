@@ -200,6 +200,11 @@ export const ContentWrapper = styled.main`
         width: 40% !important;
         margin: 1.2rem;
     }
+    .adjacent-small
+    {
+        width: 20% !important;
+        margin: 1.2rem;
+    }
 
     .adjacent-images-container
     {

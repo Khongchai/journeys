@@ -37,6 +37,7 @@ export const SideContentBarContent = () =>
                  style={{paddingTop: "1rem"}} >
                 <span style={{cursor: "pointer"}} onClick={() => 
                         {
+
                             navigate(`#${heading}`);
                             //wait time should be a bit more than the transition time for runningline element
                             setTimeout(()=>{
@@ -71,5 +72,4 @@ function manageMainAndSubsections(allHeadingsHTMLElem)
     manageMainSectionsHighlight(allHeadingsHTMLElem.current);
     manageSubSectionsHighlight();
 }
-
 
