@@ -10,3 +10,5 @@ refactor all the code
 16. For the problem with side navbar not loading sometimes = some id tags fail to load....
 16:: does not happen in development:: maybe something to do with something load before another thing...:: dirty hack = if the error exists, refresh page
 16 solution = change the parent of all nested ps to div
+
+reduce the height of navbar in mobile view to between 4.5 and 5rem
