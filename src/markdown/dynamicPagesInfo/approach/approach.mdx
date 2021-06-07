@@ -5,11 +5,21 @@ type: dynamic
 featureImage: beethoventchaikovsky.png
 ---
 
+import moonlitNightBeginning from "./audio/snippets/moonlitNightBeginning.mp3"
+import moonlitNightBeginningArranged from "./audio/snippets/moonlitNightBeginningArranged.mp3"
+import moonlitNightFirstDevelopmentArranged from "./audio/snippets/moonlitNightFirstDevelopmentArranged.mp3"
+import moonlitNightClassicalSnippet1Arranged from "./audio/snippets/moonlitNightClassicalSnippet1Arranged.mp3"
+import moonlitNightClassicalSnippet2Arranged from "./audio/snippets/moonlitNightClassicalSnippet2Arranged.mp3"
+import moonlitNightClassicalSnippet3Arranged from "./audio/snippets/moonlitNightClassicalSnippet3Arranged.mp3"
+import trepakDance from "./audio/snippets/trepakDance.mp3"
+import symphony5Waltz from "./audio/snippets/symphony5Waltz.mp3"
+import AudioSection from "./audioPlayerComponent/index.tsx"
+
 <h1 class="main-topic">Introduction</h1>
 
 <div id="Introductionparagraph">
 
-In this section, we shall be looking at Tchaikovsky’s method of composition, inspirations, and motivations. These will serve as the basis for our analysis of his concerto and other folk-inspired works in other sections. 	
+In this section, we shall be looking at Tchaikovsky’s method of composition, inspirations, and motivations. These will serve as the basis for our analysis of his concerto and other folk-inspired works in other sections.
 
 </div>
 
@@ -17,7 +27,7 @@ In this section, we shall be looking at Tchaikovsky’s method of composition, i
 
 <div id="Baselineparagraph">
 
-When analyzing someone’s work, our knowledge of music theory, history, and historical contexts play an important role in helping us decipher the hidden musical structures and developments. However, our assumptions can only go so far; no matter how detailed research is conducted, such analysis will inevitably contain a certain number of substantiated assumptions. 
+When analyzing someone’s work, our knowledge of music theory, history, and historical contexts play an important role in helping us decipher the hidden musical structures and developments. However, our assumptions can only go so far; no matter how detailed research is conducted, such analysis will inevitably contain a certain number of substantiated assumptions.
 
 <div id="Symphony No.6paragraph" >
 
@@ -25,7 +35,10 @@ When analyzing someone’s work, our knowledge of music theory, history, and his
 
 Tchaikovsky's Symphony no. 6 “Pathetique” was compared to Beethoven’s Sonata Pathétique by Hugo Riemann, a German music theorist. His thematic analysis of the symphony describes it as having “striking resemblance”to the work of the German composer. This conjecture could be derived from both compositions sharing the word “Pathetique” in their respective titles. However, we know, from his brother, that this was not the case. And Riemann was not just some music theorist; through his important publications, he coined the terms such as “tonic”, “subdominant”, “dominant” and “parallel”.
 
-<img class="enlargeable" src="https://www.gutenberg.org/files/45259/45259-h/images/ill_721_lg.png" />
+<img
+  class="enlargeable"
+  src="https://www.gutenberg.org/files/45259/45259-h/images/ill_721_lg.png"
+/>
 
 In the book Life and Letters of Tchaikovsky his brother Modeste recalls one early morning before Tchaikovksy had to send his 6th symphony to his publisher. Tchaikovsky was not able to decide upon a name for his symphony as he had no intention to “expound any meaning” on the symphony, and he did not want to give it just a number. Modeste, out of the blue, suggested the word “Pathetic”, to which Tchaikovsky saw very fitting for his new symphony (the exact word suggested was Патетическая; Pathetique or other variants are translations in other languages).
 
@@ -39,25 +52,26 @@ Collection of letters from composers often serve as invaluable first-hand resour
 
 From these three letters, we can conclude that when he composed:
 
-- The idea and the instrumentation came together: in his 2nd symphony, the pizzicato in the 3rd movement was exactly how he thought of it (778). 
+- The idea and the instrumentation came together: in his 2nd symphony, the pizzicato in the 3rd movement was exactly how he thought of it (778).
 
-- The folk-melody, harmonies, or other elements most of the time came by themselves; he did not have any ulterior nationalistic motives to his works. This could be attributed to his childhood having been spent in the country and “having in the earliest years, been impregnated with the characteristic beauty of Russian folk-music… In a word, I am Russian in the fullest sense of the word” (778). 
+- The folk-melody, harmonies, or other elements most of the time came by themselves; he did not have any ulterior nationalistic motives to his works. This could be attributed to his childhood having been spent in the country and “having in the earliest years, been impregnated with the characteristic beauty of Russian folk-music… In a word, I am Russian in the fullest sense of the word” (778).
 
 - Works that stemmed from his own initiative, not commissioned, or requested by friends, such as the concerto, flowed naturally from the brain to the pen, without need contexts or program. On the contrary, commissioned works are necessary for him to “get in the mood” (862).
 
-- Harmonies are dependent on melodic lines and rhythm (862). 
+- Harmonies are dependent on melodic lines and rhythm (862).
 
 - He did not confine himself to following traditional forms other than separating them into several movements.
 
 - His works were examined, rewritten, shortened, lengthened many times before their final form (863).
 
-Another instance where he talked about his method of composition can be found in a letter to Frau von Meck from February 17th, 1878, though he was responding to her question about his motivation 
-behind his 4th symphony that he dedicated to her, not his method of composition per se (letter 763). 
+Another instance where he talked about his method of composition can be found in a letter to Frau von Meck from February 17th, 1878, though he was responding to her question about his motivation
+behind his 4th symphony that he dedicated to her, not his method of composition per se (letter 763).
 
-In it, he was asked whether he had a special program in view, and his reply was that he usually had no motives other than his inner musical voice for 
-symphonic and instrumental music. Such music was to him, his means of expressing his inner thoughts where words do not suffice; when main ideas manifest, everything 
-flows naturally, surroundings and time become forgotten. The entire process was comparable to verses from poets, in that they are in the final form, and any attempt at 
-translating it to words could be no more than futile metaphors (763). 
+In it, he was asked whether he had a special program in view, and his reply was that he usually had no motives other than his inner musical voice for
+symphonic and instrumental music. Such music was to him, his means of expressing his inner thoughts where words do not suffice; when main ideas manifest, everything
+flows naturally, surroundings and time become forgotten. The entire process was comparable to verses from poets, in that they are in the final form, and any attempt at
+translating it to words could be no more than futile metaphors (763).
+
 </div>
 
 </div>
@@ -66,7 +80,112 @@ translating it to words could be no more than futile metaphors (763).
 
 <div id="Approachparagraph" >
 
-Approach info goes here.
+### Disclaimer
+
+- Before we dive into the details, it is important to note that this research does not aim to be historically, theoretically, or artistically accurate.
+
+The arrangement is divided into 5 separate journeys, each with its own research-inspired rationale. The arrangement is meant to be played back to back, however, for the sake
+of analysis, in this section, we will look at them individually. The audio, both separate movements, and the entire arrangement are included below alongside their respective section.
+
+** 1st Stop: Prologue **
+
+<div id="1st Stop: Prologueparagraph">
+
+In our first journey, we begin with a slightly modified motif and reharmonized orchestral version of the Ukrainian folk song <i>Ніч яка місячна</i>.
+As mentioned in the research section, Tchaikovsky, when composing, often play around with the idea of thematic development and strict, western reharmonization.
+However, the western influence was not the sole source of his inspiration, much of it came also from contemporary influence, both domestic and abroad. Hence, the
+more modern sounding harmony, which will be the recurring theme throughout the entire arrangement.
+
+<AudioSection
+  dataArray={[
+    {
+      audioData: moonlitNightBeginning,
+      credit: [
+        "Alexander Minkovsky",
+        "Boris Gmyrya",
+        "State Ukrainian Bandurists Capella",
+      ],
+      title: "Moonlit Night Beginning",
+    },
+  ]}
+  type="original"
+/>
+
+<AudioSection
+  dataArray={[
+    {
+      audioData: moonlitNightBeginningArranged,
+      title: "Moonlit Night Beginning",
+    },
+  ]}
+  type="arranged"
+/>
+
+We then moved to a <i>developed</i> version of the main melody, a common approach Tchaikovsky adopted to deal with the repetitions found in folk music.
+This is discussed in details in the analysis section.
+
+<AudioSection
+  dataArray={[
+    {
+      audioData: moonlitNightFirstDevelopmentArranged,
+      title: "First Thematic Development",
+    },
+  ]}
+  type="arranged"
+/>
+
+To pay homage to Tchaikovsky, as well as be inspired by his musical aesthetics, the melody and harmony, in later parts of the arrangement, bring in classical voicings,
+harmonies, and other western music-insired elements into it.
+
+<AudioSection
+  dataArray={[
+    {
+      audioData: moonlitNightClassicalSnippet1Arranged,
+      title: "Classical Snippet #1",
+    },
+    {
+      audioData: moonlitNightClassicalSnippet2Arranged,
+      title: "Classical Snippet #1",
+    },
+    {
+      audioData: moonlitNightClassicalSnippet3Arranged,
+      title: "Classical Snippet #1",
+    },
+  ]}
+  type="arranged"
+/>
+
+This eventual amalgamation of different folk and classical styles, as mentioned in the research section, is also prevalent in Tchaikovsky's music. In the two snippets below, we have
+the famous trepak dance from the Nutcracker Suite, which features a dance rhythm from the traditional Russian dance of the same name, and a waltz from his 5th symphony, which uses the melody
+he discovered by accident as he was <a href="analysis#Italy">touring Italy</a> (more in the Italy section in the analysis page).
+
+<AudioSection
+  dataArray={[
+    {
+      audioData: trepakDance,
+      credit: ["Berliner Philharmoniker", "Mstislav Rostropovich"],
+      title: "Trepak Dance",
+    },
+    {
+      audioData: symphony5Waltz,
+      credit: ["Berliner Philharmoniker", "Kirill Petrenko"],
+      title: "Waltz",
+    },
+  ]}
+  type="original"
+/>
+
+Eventually, the ending takes us to the harmonic landscape more familiar to people from the 21st century, reminding the listeners of the theme of this research, Tchaikovsky in the present day.
+Of course, it wouldn't be Tchaikovsky without some elements of his in it. In the last part of the arrangement, we have the typical Tchaikovsky's running viola lines, accompanying
+a soft and mellow piano solo. Finally, the first journey concludes with a Disney-like string orchestra + balalaika arrangement, accompanying a melody that reminds us a bit of
+one of the themes from the Nutcracker.
+
+{example 1}
+
+{example 2}
+
+{example 3}
 
 </div>
 
+</div>
