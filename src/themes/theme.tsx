@@ -13,6 +13,7 @@ export default {
     mainBlack: "#1F271B",
     secondaryPink: "#F3EEEE",
     backgroundPurple: "#ae76c4",
+    backgroundBlue: "#7677c4",
   },
   breakpoints: {
     mobileAndTablet: "only screen and (max-width: 600px)",

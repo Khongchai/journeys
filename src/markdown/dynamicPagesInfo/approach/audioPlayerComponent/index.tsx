@@ -19,11 +19,12 @@ const index: React.FC<{
             return (
               <>
                 <AudioData>
-                  {type === "original" ? (
-                    <Title fontColor="black">{title} (original)</Title>
-                  ) : (
-                    <Title fontColor="white">{title} (arranged)</Title>
-                  )}
+                  <Title>
+                    {type === "original"
+                      ? `${title} (original)`
+                      : `${title} (arranged)`}
+                  </Title>
+
                   <AudioPlayer controls>
                     <source src={audioData} type="audio/mpeg" />
                   </AudioPlayer>
@@ -62,7 +63,7 @@ const AudioSection = styled.div`
   padding: 1rem;
   background-color: ${props =>
     props.type === "original"
-      ? props.theme.colors.secondaryPink
+      ? props.theme.colors.backgroundBlue
       : props.theme.colors.backgroundPurple};
 `
 
@@ -90,7 +91,6 @@ const CreditButton = styled.div`
 const AudioPlayer = styled.audio`
   width: 100%;
   margin: 1rem !important;
-  box-shadow: 1px 5px 11px -5px #000000;
   @media only screen and (max-width: 300px) {
     width: 80%;
   }
@@ -109,7 +109,7 @@ const AudioData = styled.span`
 
 const Title = styled.span`
   font-size: 0.8rem;
-  color: ${props => props.fontColor};
+  color: white;
 `
 
 function openNewTabAndGoogle(name: string) {
