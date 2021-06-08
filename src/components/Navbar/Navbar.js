@@ -20,7 +20,7 @@ export const Navbar = () => {
   const projectName = "Journeys"
   const bioText = "Biography"
   const aboutText = "About"
-  const approachText = "Approach"
+  const journeysText = "Journeys"
   const creditText = "Credit"
   const analysisText = "Analysis"
 
@@ -56,17 +56,18 @@ export const Navbar = () => {
               <LinkText className="link-text">{bioText}</LinkText>
             </NavLink>
           </NavItem>
-          <NavItem className="nav-item">
-            <NavLink to="/approach">
-              <ResearchIcon />
-              <LinkText className="link-text">{approachText}</LinkText>
-            </NavLink>
-          </NavItem>
 
           <NavItem className="nav-item">
             <NavLink to="/analysis">
               <AnalysisIcon />
               <LinkText className="link-text">{analysisText}</LinkText>
+            </NavLink>
+          </NavItem>
+
+          <NavItem className="nav-item">
+            <NavLink to="/journeys">
+              <ResearchIcon />
+              <LinkText className="link-text">{journeysText}</LinkText>
             </NavLink>
           </NavItem>
 
