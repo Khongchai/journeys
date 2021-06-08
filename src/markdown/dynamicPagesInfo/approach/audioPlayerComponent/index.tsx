@@ -103,6 +103,10 @@ const AudioData = styled.span`
   width: 100%;
 
   @media only screen and (max-width: 800px) {
+    &:not(:first-child) {
+      border-top: 1px solid #181515;
+    }
+    padding-top: 0.75rem;
     flex-direction: column !important;
   }
 `
@@ -110,6 +114,7 @@ const AudioData = styled.span`
 const Title = styled.span`
   font-size: 0.8rem;
   color: white;
+  text-align: center;
 `
 
 function openNewTabAndGoogle(name: string) {

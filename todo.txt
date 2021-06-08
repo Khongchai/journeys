@@ -4,7 +4,10 @@ TODO
 refactor all the code
 
 14. Think about the side navbar in mobile mode.
+- Hide the side bar in mobile mode and have like a button on the right to toggle it on or off.
 16:: does not happen in development:: maybe something to do with something load before another thing...:: dirty hack = if the error exists, refresh page
 16 solution = change the parent of all nested ps to div
 
 Where is the hover effect for the main topic in the side content bar?
+
+For main topic, sometimes the ids do not get loaded.
