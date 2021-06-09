@@ -20,7 +20,8 @@ export const Navbar = () => {
   const projectName = "Journeys"
   const bioText = "Biography"
   const aboutText = "About"
-  const resultText = "result"
+  //Journey page is called result, to prevent path conflict.
+  const resultText = "Journeys"
   const creditText = "Credit"
   const analysisText = "Analysis"
 
@@ -65,7 +66,7 @@ export const Navbar = () => {
           </NavItem>
 
           <NavItem className="nav-item">
-            <NavLink to="/journeys">
+            <NavLink to="/result">
               <ResearchIcon />
               <LinkText className="link-text">{resultText}</LinkText>
             </NavLink>
