@@ -1,6 +1,8 @@
 import React from "react"
 import styled from "styled-components"
 
+//Implement image display for possible scores
+
 const index: React.FC<{
   dataArray: [
     {

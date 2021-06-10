@@ -2,20 +2,6 @@ import React from "react"
 import { ThemeProvider, createGlobalStyle } from "styled-components"
 import theme from "./src/themes/theme"
 
-export const onClientEntry = () => {
-  window.onload = () => {
-    if (window.location.hash !== "") {
-      window.setTimeout(() => {
-        const position = window.location.hash.substr(1)
-        const elem = document.getElementById(decodeURI(position))
-        if (elem) {
-          elem.scrollIntoView()
-        }
-      }, 1000)
-    }
-  }
-}
-
 const GlobalStyles = createGlobalStyle`
 
     :root

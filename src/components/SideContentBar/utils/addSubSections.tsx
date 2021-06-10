@@ -21,13 +21,9 @@ export default function manageSubSections(
 
       newSection.classList.add("subsection-anchor")
 
-      //newSection.href = `#${subSections[i].innerHTML}`;
-      subSections[i].id = subSections[i].innerHTML
-
       newSection.innerHTML = `${subSections[i].innerHTML}`
       newSection.style.cursor = "pointer"
       sidebarSection.parentElement.appendChild(newSection)
-      //sidebarSection.appendChild(newSection);
 
       newSection.href = "#" + subSections[i].innerHTML
     }
@@ -36,7 +32,6 @@ export default function manageSubSections(
       sidebarSection.parentElement.removeChild(
         sidebarSection.parentElement.lastElementChild
       )
-      //sidebarSection.removeChild(sidebarSection.lastElementChild);
     }
   }
 }
