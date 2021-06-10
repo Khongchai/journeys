@@ -28,7 +28,8 @@ export const SideContentBarContent = () => {
   return (
     <>
       {allHeadingTexts.map((heading, i) => (
-        <div
+        <span
+          key={heading}
           id={`sidebar${heading}parent`}
           className={
             allHeadingsHTMLElem.current[i].classList.contains("main-topic")
@@ -40,8 +41,9 @@ export const SideContentBarContent = () => {
           <span
             style={{ cursor: "pointer" }}
             onClick={() => {
-              navigate(`#${heading}`)
-              //wait time should be a bit more than the transition time for runningline element
+              //Indented <a> tag does not work, so this will do for now.
+              document.getElementById(heading).scrollIntoView()
+              window.location.hash = heading
               setTimeout(() => {
                 manageLineIndicator()
               }, 170)
@@ -53,7 +55,7 @@ export const SideContentBarContent = () => {
           >
             {heading}
           </span>
-        </div>
+        </span>
       ))}
     </>
   )
