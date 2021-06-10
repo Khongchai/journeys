@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from "react"
 import { manageMainSectionsHighlight } from "./utils/viewPortVisibilityMonitor"
 import manageLineIndicator from "./utils/manageLineIndicator"
 import manageSubSectionsHighlight from "./utils/viewPortVisibilityMonitor/manageSubSectionsHighlight"
-import { navigate } from "@reach/router"
 
 export const SideContentBarContent = () => {
   const [allHeadingTexts, setAllHeadingTexts] = useState([])
