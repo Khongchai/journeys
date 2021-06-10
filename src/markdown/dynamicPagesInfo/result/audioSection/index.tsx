@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useRef } from "react"
 import styled from "styled-components"
-import WaveSurfer from "wavesurfer.js"
 
 //Implement image display for possible scores
 
@@ -73,8 +72,12 @@ export const AlternateAudioPlayer: React.FC<{ link: string }> = ({ link }) => {
     duration: number
     currentTime: number
   }>({ duration: 0, currentTime: 0 })
+  if (!(typeof window != "undefined" && window.document)) {
+    return
+  }
 
   useEffect(() => {
+    var WaveSurfer = require("wavesurfer.js")
     const elem = document.getElementById("all-audio-together")
     if (elem) {
       wavesurfer.current = WaveSurfer.create({
