@@ -27,26 +27,29 @@ workbox.core.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-d83e15cd97d9a9571b9d.js"
+    "url": "webpack-runtime-346675d16a36c298a5eb.js"
   },
   {
     "url": "styles.852dd62a8a059cff2451.css"
   },
   {
-    "url": "styles-8fab2804fb6f85b824b6.js"
+    "url": "styles-bc72ca78f9bad9fb1f45.js"
   },
   {
-    "url": "framework-d066f55745d479a55fde.js"
+    "url": "framework-83e11af5cf111be5ad89.js"
   },
   {
-    "url": "app-8566f11f3d174512ca89.js"
+    "url": "925e0f50-92068d60ac9062b92595.js"
+  },
+  {
+    "url": "app-f93913b09b3690631b1a.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "1a3509bd16fe216cc9d46a72e2c874db"
+    "revision": "e98fd67c92d5cc9e88aee39d0116c6ef"
   },
   {
-    "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-19245c8506e49b502b12.js"
+    "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-16703ee5599528db9f93.js"
   },
   {
     "url": "page-data/offline-plugin-app-shell-fallback/page-data.json",
@@ -66,35 +69,35 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/app-data.json",
-    "revision": "3b21625c5f64d2a61fca83f6f592af17"
+    "revision": "5f0a58e7ec0f8879aab33635c399c275"
   },
   {
-    "url": "polyfill-904ff851a679029ed10b.js"
+    "url": "polyfill-0d026d1f75aedaa2b363.js"
   },
   {
-    "url": "component---src-templates-blog-template-js-168513b88a971ad08e30.js"
+    "url": "component---src-templates-blog-template-js-23626f5e4092b94ba064.js"
   },
   {
     "url": "page-data/about/page-data.json",
-    "revision": "663ca387b1b0d96a9f4b6569577fffb5"
+    "revision": "96623333738e1efe7ea516c5d8035540"
   },
   {
     "url": "page-data/analysis/page-data.json",
-    "revision": "281996eae6a9d39fd71ac2dbb73389b9"
+    "revision": "9b805fda94ca2410fae005ecbd5311d3"
   },
   {
     "url": "page-data/biography/page-data.json",
-    "revision": "d019f7f7b88ed089453cf6ac5cad12ea"
+    "revision": "28dd7f08aab1330c8017e30a18d50a8a"
   },
   {
-    "url": "component---src-pages-credit-tsx-f37507eaa5a96b0ffdb4.js"
+    "url": "component---src-pages-credit-tsx-799ca28cc49a6ffe120f.js"
   },
   {
     "url": "page-data/credit/page-data.json",
     "revision": "0a23f7cefd0b3300089fb7035826bea7"
   },
   {
-    "url": "component---src-pages-index-js-bae47232543c65ef779d.js"
+    "url": "component---src-pages-index-js-50dd7f44a17aa86a8d70.js"
   },
   {
     "url": "page-data/index/page-data.json",
@@ -102,7 +105,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/result/page-data.json",
-    "revision": "d9e9e05e342854b949d93de597341d9f"
+    "revision": "5b5a2ae7f1a9ad96c519606541fecd1a"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
@@ -194,7 +197,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/journeys/app-8566f11f3d174512ca89.js`))) {
+  if (!resources || !(await caches.match(`/journeys/app-f93913b09b3690631b1a.js`))) {
     return await fetch(event.request)
   }
 
