@@ -13,7 +13,7 @@ import moonlitNightClassicalSnippet2Arranged from "./audio/snippets/moonlitNight
 import moonlitNightClassicalSnippet3Arranged from "./audio/snippets/moonlitNightClassicalSnippet3Arranged.mp3"
 import trepakDance from "./audio/snippets/trepakDance.mp3"
 import symphony5Waltz from "./audio/snippets/symphony5Waltz.mp3"
-import AudioSection from "./audioPlayerComponent/index.tsx"
+import AudioSection, { AlternateAudioPlayer } from "./audioSection/index.tsx"
 import moonlitNightMoreModern1Arranged from "./audio/snippets/moonlitNightMoreModern1Arranged.mp3"
 import moonlitNightMoreModern2Arranged from "./audio/snippets/moonlitNightMoreModern2Arranged.mp3"
 import moonlitNightMoreModern3Arranged from "./audio/snippets/moonlitNightMoreModern3Arranged.mp3"
@@ -45,8 +45,9 @@ import irishOpenStringPadEnding from "./audio/snippets/irishOpenStringPadEnding.
 import irishCounterMelody from "./audio/snippets/irishCounterMelody.mp3"
 import irishWaltzOfFlower from "./audio/snippets/irishWaltzOfFlower.mp3"
 import irishConcertoThirdMovement from "./audio/snippets/irishConcertoThirdMovement.mp3"
+import everythingTogether from "./audio/snippets/everythingTogether.mp3"
 
-;<h1 class="main-topic">Introduction</h1>
+<h1 class="main-topic">Introduction</h1>
 
 <div style={{ textAlign: "center" }}>Journeys</div>
 
@@ -146,6 +147,7 @@ more modern sounding harmony, which will be the recurring theme throughout the e
         "State Ukrainian Bandurists Capella",
       ],
       title: "Moonlit Night Beginning",
+      recordingInfo: {},
     },
   ]}
   type="original"
@@ -205,11 +207,21 @@ he discovered by accident as he was <a href="analysis#Italy">touring Italy</a> (
       audioData: trepakDance,
       credit: ["Berliner Philharmoniker", "Mstislav Rostropovich"],
       title: "Trepak Dance",
+      recordingInfo: {
+        year: 1996,
+        location: "Berlin, Germany",
+        label: "Berlin Philharmonic Orchestra",
+      },
     },
     {
       audioData: symphony5Waltz,
       credit: ["Berliner Philharmoniker", "Kirill Petrenko"],
       title: "Waltz",
+      recordingInfo: {
+        year: 2020,
+        location: "Berlin, Germany",
+        label: "Berlin Philharmonic Orchestra",
+      },
     },
   ]}
   type="original"
@@ -254,8 +266,13 @@ Similar to the previous arrangement, here, the melody from the famous folk tune 
   dataArray={[
     {
       audioData: korobeinikiBeginning,
-      title: "Korobeiniki Melody",
-      credit: ["The Red Army Choir"],
+      title: "Korobeiniki's Main Melody",
+      credit: ["The Red Army Choir", "The Alexandrov Ensemble"],
+      recordingInfo: {
+        year: 2008,
+        location: "Moscow, Russia",
+        label: "Kosmos",
+      },
     },
   ]}
   type="original"
@@ -270,16 +287,31 @@ of other instruments in other settings. This textural play, although not common 
       audioData: hurdyGurdy,
       title: "The Unique Hurdy-Gurdy Sound",
       credit: ["Andrey Vinogradov"],
+      recordingInfo: {
+        year: 2020,
+        location: "Gdańsk, Poland",
+        label: "AV Studio",
+      },
     },
     {
       audioData: romanianViolin,
       title: "Traditional Romanian Violin",
       credit: ["Ghoerghe Anghel"],
+      recordingInfo: {
+        year: 2015,
+        location: "Romania",
+        label: "None",
+      },
     },
     {
       audioData: indianViolin,
       title: "Carnatic Violin",
       credit: ["Kunnakudi Vaidyanathan"],
+      recordingInfo: {
+        year: 2004,
+        location: "India",
+        label: "Amutham Music",
+      },
     },
   ]}
   type="original"
@@ -357,6 +389,10 @@ Then, the music introduces the main theme of the second movement from Tchaikovsk
         "Vasily Petrenko",
         "Hilary Hahn",
       ],
+      recordingInfo: {
+        year: 2010,
+        label: "Detusche Grammophon",
+      },
     },
   ]}
   type="original"
@@ -381,6 +417,9 @@ the accompaniment part changes dramatically.
       audioData: secondMovementFolkExample,
       title: "The Very Beginning of Tchaikovsky's 2nd Symphony",
       credit: ["Polish National Radio Symphony Orchestra", "Adiran Leaper"],
+      recordingInfo: {
+        year: 1992,
+      },
     },
   ]}
   type="original"
@@ -395,6 +434,9 @@ also reflected in the arrangement.
       audioData: secondMovementTransformed,
       title: "The First Motivic Transformation in the 2nd Symphony",
       credit: ["Polish National Radio Symphony Orchestra", "Adiran Leaper"],
+      recordingInfo: {
+        year: 1992,
+      },
     },
   ]}
   type="original"
@@ -464,6 +506,11 @@ often resort to tapping their own foot in a constant beat. This tapping is found
       audioData: irishTap,
       title: "Simple Tapping in Irish Music",
       credit: ["Christy Barry"],
+      recordingInfo: {
+        year: 2018,
+        location: "Doolin, Ireland",
+        label: "Online Irish Academy of Music",
+      },
     },
   ]}
   type="original"
@@ -484,6 +531,10 @@ often resort to tapping their own foot in a constant beat. This tapping is found
         "Mathieu Gallant",
         "Élisabeth Moquin",
       ],
+      recordingInfo: {
+        location: "Sainte-Béatrix, Canada",
+        year: 2016,
+      },
     },
   ]}
   type="original"
@@ -554,6 +605,10 @@ in the piece before they come together for a melodically climactic duet.
       audioData: irishWaltzOfFlower,
       title: "Melodies From Earlier Sections in the Waltz of Flower",
       credit: ["Royal Philharmonic Orchestra", "David Arnold"],
+      recordingInfo: {
+        year: 2007,
+        label: "Warner Classics",
+      },
     },
   ]}
   type="original"
@@ -566,6 +621,10 @@ in the piece before they come together for a melodically climactic duet.
       title:
         "2 Consecutive Polyphonies in the Third Movement of the Violin Concerto",
       credit: ["Philadelphia Orchestra", "Eugene Ormandy", "Itzhak Perlman"],
+      recordingInfo: {
+        year: 2015,
+        label: "Warner Classics",
+      },
     },
   ]}
   type="original"
@@ -615,6 +674,14 @@ bringing our series of dream-like journeys to an end.
 
 </div>
 
-{TOOD: Irish section + section for the full version of all music.}
+# Full Version
+
+<div id="Full Versionparagraph">
+
+As promised, here's the entire arrangement.
+
+<AlternateAudioPlayer link={everythingTogether} />
+
+</div>
 
 </div>

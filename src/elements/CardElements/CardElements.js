@@ -11,7 +11,7 @@ export const CardList = styled.div`
   @media ${props => props.theme.breakpoints.mobileAndTablet} {
     flex-direction: column;
     align-items: center;
-    padding-bottom: 200px;
+    padding-bottom: 100px;
     justify-content: center;
     padding-left: 0;
     padding-right: 0;
@@ -27,7 +27,7 @@ export const CardWrapper = styled.article`
   min-width: 288px;
   padding: 1.5rem;
   margin-right: 5rem;
-  margin-bottom: 3rem;
+  margin-bottom: 1.5rem;
   border-radius: 16px;
   background-image: url(${backgroundImage});
   box-shadow: 0rem -2rem 7rem -2.7rem #000;

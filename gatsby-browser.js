@@ -2,6 +2,32 @@ import React from "react"
 import { ThemeProvider, createGlobalStyle } from "styled-components"
 import theme from "./src/themes/theme"
 
+//Ensure line indicator shows up
+export const onInitialClientRender = () => {
+  window.setTimeout(() => {
+    const event = new Event("scroll")
+    window.dispatchEvent(event)
+  }, 300)
+}
+
+//Need this because for some reason, it refuses to take you there by itself. Just don't fucking touch this, it works now.
+export const onClientEntry = () => {
+  window.onload = function () {
+    const hashVal = decodeURI(window.location.hash.split("#")[1])
+
+    repeatUntilFound(hashVal)
+  }
+}
+function repeatUntilFound(id) {
+  window.setTimeout(() => {
+    const elem = document.getElementById(id)
+    if (!elem) {
+      repeatUntilFound(id)
+    } else {
+      elem.scrollIntoView()
+    }
+  }, 200)
+}
 const GlobalStyles = createGlobalStyle`
 
     :root

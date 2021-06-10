@@ -20,6 +20,7 @@
     "@types/styled-components": "^5.1.7",
     "animate.css": "^4.1.1",
     "babel-plugin-styled-components": "^1.12.0",
+    "dom-converter": "^0.2.0",
     "gatsby": "^2.26.1",
     "gatsby-image": "^2.9.0",
     "gatsby-plugin-anchor-links": "^1.2.0",
@@ -33,10 +34,12 @@
     "gatsby-remark-images": "^3.8.1",
     "gatsby-source-filesystem": "^2.8.1",
     "gatsby-transformer-sharp": "^2.10.0",
+    "node-gyp-build": "^4.2.3",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^6.1.0",
-    "styled-components": "^5.2.1"
+    "styled-components": "^5.2.1",
+    "wavesurfer.js": "^5.0.1"
   },
   "devDependencies": {
     "@types/howler": "^2.2.2",
