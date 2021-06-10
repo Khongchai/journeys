@@ -63,7 +63,6 @@ export const SideContentBarContent = () => {
 function getTextFromHTMLAndSetID(HTMLArray) {
   const array = []
   for (let obj of HTMLArray) {
-    if (obj.className === "main-topic") obj.classList.add("center")
     let text = obj.innerHTML
     obj.id = text
     array.push(text)

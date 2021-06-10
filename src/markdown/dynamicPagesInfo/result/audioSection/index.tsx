@@ -73,7 +73,7 @@ export const AlternateAudioPlayer: React.FC<{ link: string }> = ({ link }) => {
     currentTime: number
   }>({ duration: 0, currentTime: 0 })
   if (!(typeof window != "undefined" && window.document)) {
-    return
+    return null
   }
 
   useEffect(() => {
@@ -127,32 +127,38 @@ export const AlternateAudioPlayer: React.FC<{ link: string }> = ({ link }) => {
   return (
     <div>
       <AudioControllers>
-        <PlayPauseButton
-          onClick={() => {
-            playAudio()
-          }}
-        >
-          {playOrPause}
-        </PlayPauseButton>
-        <div
-          style={{
-            display: "grid",
-            placeItems: "center",
-            marginTop: "0",
-            width: "100%",
-          }}
-        >
-          <VolumeSlider
-            type="range"
-            step="0.01"
-            min="0"
-            max="1"
-            value={volume}
-            id="myRange"
-            style={{ width: "100%" }}
-            onChange={e => handleChange(e.target.value)}
-          />
-        </div>
+        {timeData.duration == 0 ? (
+          "Audio loading..."
+        ) : (
+          <>
+            <PlayPauseButton
+              onClick={() => {
+                playAudio()
+              }}
+            >
+              {playOrPause}
+            </PlayPauseButton>
+            <div
+              style={{
+                display: "grid",
+                placeItems: "center",
+                marginTop: "0",
+                width: "100%",
+              }}
+            >
+              <VolumeSlider
+                type="range"
+                step="0.01"
+                min="0"
+                max="1"
+                value={volume}
+                id="myRange"
+                style={{ width: "100%" }}
+                onChange={e => handleChange(e.target.value)}
+              />
+            </div>
+          </>
+        )}
       </AudioControllers>
 
       <div
@@ -161,9 +167,7 @@ export const AlternateAudioPlayer: React.FC<{ link: string }> = ({ link }) => {
         id="all-audio-together"
       ></div>
       <TimeDisplayContainer>
-        {timeData.duration == 0
-          ? "Audio loading..."
-          : timeData.currentTime / 60 + " / " + timeData.duration / 60}
+        {timeData.currentTime / 60 + " / " + timeData.duration / 60}
       </TimeDisplayContainer>
     </div>
   )

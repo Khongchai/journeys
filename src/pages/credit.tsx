@@ -49,4 +49,6 @@ const AcknowledgementContainer = styled.div`
 const Text = styled.p`
   text-indent: 3rem;
   margin-top: 2rem;
+  font-size: 14px;
+  line-height: 1.875rem;
 `
