@@ -69,6 +69,10 @@ export const AlternateAudioPlayer: React.FC<{ link: string }> = ({ link }) => {
   const wavesurfer = useRef(null)
   const allAudioDiv = useRef(null)
   const [volume, setVolume] = useState(0.5)
+  const [timeData, setTimeData] = useState<{
+    duration: number
+    currentTime: number
+  }>({ duration: 0, currentTime: 0 })
 
   useEffect(() => {
     const elem = document.getElementById("all-audio-together")
@@ -81,6 +85,18 @@ export const AlternateAudioPlayer: React.FC<{ link: string }> = ({ link }) => {
         responsive: true,
       })
       wavesurfer.current.load(link)
+      wavesurfer.current.on("ready", function () {
+        setTimeData({
+          duration: wavesurfer.current.getDuration(),
+          currentTime: timeData.currentTime,
+        })
+      })
+      wavesurfer.current.on("audioprocess", function () {
+        setTimeData({
+          duration: wavesurfer.current.getDuration(),
+          currentTime: wavesurfer.current.getCurrentTime(),
+        })
+      })
     }
     wavesurfer.current.setVolume(volume)
     return () => wavesurfer.current.destroy()
@@ -141,6 +157,11 @@ export const AlternateAudioPlayer: React.FC<{ link: string }> = ({ link }) => {
         ref={allAudioDiv}
         id="all-audio-together"
       ></div>
+      <TimeDisplayContainer>
+        {timeData.duration == 0
+          ? "Audio loading..."
+          : timeData.currentTime / 60 + " / " + timeData.duration / 60}
+      </TimeDisplayContainer>
     </div>
   )
 }
@@ -265,6 +286,12 @@ const VolumeSlider = styled.input`
   @media only screen and (max-width: 800px) {
     margin-top: 2rem !important;
   }
+`
+
+const TimeDisplayContainer = styled.div`
+  width: 100%;
+  height: fit-content;
+  text-align: center;
 `
 
 function openNewTabAndGoogle(name: string) {

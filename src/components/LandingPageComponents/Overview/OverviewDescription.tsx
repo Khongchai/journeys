@@ -14,11 +14,11 @@ export default function OverviewDescription(props: any) {
 
   function clickYear(year: number) {
     setTimeout(() => {
-      let yearElem = document.getElementById(`sidebar${year}`)
+      let yearElem = document.getElementById(`${year}`)
       if (yearElem) {
-        yearElem.click()
+        yearElem.scrollIntoView()
       }
-    }, 600)
+    }, 100)
   }
   return (
     <OverviewDescriptionWrapper>
