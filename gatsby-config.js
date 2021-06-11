@@ -1,16 +1,13 @@
-
 module.exports = {
   pathPrefix: "/journeys",
-  siteMetadata:
-  {
+  siteMetadata: {
     title: "Journeys",
     description: "Khongchai's 2021 Graduate Recital",
     author: "Khongchai",
     url: "khongchai.github.io",
-    image: "images/tchaikovsky-for-helmet.jpg",
+    image: "tchaikovsky-for-helmet.jpg",
   },
-  plugins: 
-  [
+  plugins: [
     "gatsby-plugin-styled-components",
     {
       resolve: `gatsby-plugin-google-fonts`,
@@ -18,36 +15,33 @@ module.exports = {
         fonts: [
           `limelight`,
           `montserrat`,
-          `source sans pro\:300,400,400i,700` // you can also specify font weights and styles
+          `source sans pro\:300,400,400i,700`, // you can also specify font weights and styles
         ],
-        display: 'swap'
-      }
+        display: "swap",
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
-      options: 
-      {
+      options: {
         name: `dynamicPagesInfo`,
         path: `${__dirname}/src/markdown/dynamicPagesInfo`,
-      }
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
-      options:
-      {
+      options: {
         name: `images`,
         path: `${__dirname}/src/images`,
-      }
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
-      options:
-      {
+      options: {
         name: `markdownForTimeline`,
         path: `${__dirname}/src/markdown/markdownForTimeline`,
-      }
+      },
     },
-    `gatsby-plugin-sharp`, 
+    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-offline`,
       options: {
@@ -58,13 +52,11 @@ module.exports = {
     `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-plugin-mdx`,
-      options:
-      {
-        extensions: [`.mdx`,`.md`],
-        gatsbyRemarkPlugins:
-        [
+      options: {
+        extensions: [`.mdx`, `.md`],
+        gatsbyRemarkPlugins: [
           {
-            resolve: `gatsby-remark-images`
+            resolve: `gatsby-remark-images`,
           },
         ],
       },
