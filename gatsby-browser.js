@@ -28,6 +28,7 @@ function repeatUntilFound(id) {
     }
   }, 200)
 }
+
 const GlobalStyles = createGlobalStyle`
 
     :root

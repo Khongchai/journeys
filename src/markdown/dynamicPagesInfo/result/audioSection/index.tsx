@@ -14,6 +14,7 @@ const index: React.FC<{
         label?: string
       }
       title: string
+      khongInstruments?: string
     }
   ]
   type: string
@@ -22,7 +23,13 @@ const index: React.FC<{
     <AudioSection type={type}>
       {dataArray
         ? dataArray.map(data => {
-            const { audioData, title, credit, recordingInfo } = data
+            const {
+              audioData,
+              title,
+              credit,
+              recordingInfo,
+              khongInstruments,
+            } = data
             return (
               <>
                 <AudioData>
@@ -54,7 +61,11 @@ const index: React.FC<{
                       })}
                     </CreditButtonsContainer>
                   </CreditAndRecordingInfoContainer>
-                ) : null}
+                ) : (
+                  <small style={{ color: "white", marginTop: "0" }}>
+                    Khongchai Greesuradej: {khongInstruments}
+                  </small>
+                )}
               </>
             )
           })
@@ -167,10 +178,22 @@ export const AlternateAudioPlayer: React.FC<{ link: string }> = ({ link }) => {
         id="all-audio-together"
       ></div>
       <TimeDisplayContainer>
-        {timeData.currentTime / 60 + " / " + timeData.duration / 60}
+        {secondsToMinuteWithSeconds(timeData.currentTime) +
+          " / " +
+          secondsToMinuteWithSeconds(timeData.duration)}
       </TimeDisplayContainer>
     </div>
   )
+}
+
+function secondsToMinuteWithSeconds(timeInSeconds: number) {
+  let secondsRemainder: string | number = timeInSeconds % 60
+  let minute: string | number = (timeInSeconds - secondsRemainder) / 60
+
+  //beautify format to 00 instead of 0
+  secondsRemainder =
+    secondsRemainder < 10 ? `0${~~secondsRemainder}` : ~~secondsRemainder
+  return minute + ": " + secondsRemainder
 }
 
 const AudioSection = styled.div`

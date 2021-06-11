@@ -11,6 +11,7 @@ import {
   CreditIcon,
   AnalysisIcon,
   ResearchIcon,
+  PerformanceIcon,
 } from "../../elements"
 import { HomeElement } from "../../elements"
 import React, { useEffect } from "react"
@@ -24,6 +25,7 @@ export const Navbar = () => {
   const resultText = "Journeys"
   const creditText = "Credit"
   const analysisText = "Analysis"
+  const performanceText = "Performance"
 
   useEffect(() => {
     window.addEventListener("resize", () => checkIfOffScreen())
@@ -62,6 +64,13 @@ export const Navbar = () => {
             <NavLink to="/analysis">
               <AnalysisIcon />
               <LinkText className="link-text">{analysisText}</LinkText>
+            </NavLink>
+          </NavItem>
+
+          <NavItem className="nav-item">
+            <NavLink to="/performance">
+              <PerformanceIcon />
+              <LinkText className="link-text">{performanceText}</LinkText>
             </NavLink>
           </NavItem>
 
